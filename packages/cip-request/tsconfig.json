@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.packages.json",
+  "compilerOptions": {
+    "declarationDir": "./types",
+    "declaration": true,
+    "outDir": "./types",
+    "emitDeclarationOnly": true,
+    "noEmit": false,
+    "strictNullChecks": false,
+    "moduleResolution": "bundler"
+  },
+  "include": [
+    "./src/**/*.js",
+    "./src/**/*.jsx",
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ],
+  "exclude": ["@xigefish/*"]
+}

@@ -1,0 +1,306 @@
+@import './menu-theme-mixin.less';
+/**
+ @navBg 菜单背景色
+ @headerBg 头部背景色
+ @footBg 页脚背景色
+ @fontColor 头部颜色
+ @activeFontColor 菜单激活是文字颜色
+ @menuItemActive 菜单激活时背景色
+ @subMenuOpened 子菜单打开时背景色
+ @menuFontColor 菜单文字颜色
+ @mainBackground 主要的背景色
+ */
+.main-theme{
+  --menu-color: var(--cip-main-menu-color, var(--cip-main-color));
+  @useMenuFontColor: var(--menu-color);
+  @navBg: var(--cip-main-nav-bg);
+  @headerBg: var(--cip-main-header-bg);
+  @footBg: var(--cip-main-footer-bg);
+  @fontColor: var(--cip-main-color);
+  @activeFontColor: var(--cip-main-active-font-color);
+  @menuItemActive: var(--cip-main-menu-item-active-bg);
+  @subMenuOpened: var(--cip-main-sub-menu-opened-bg);
+  @menuFontColor: var(--menu-color);
+  @mainBackground: var(--cip-main-bg);
+  @navHoverBg: var(--cip-main-bg);
+  @navHoverColor: var(--cip-main-nav-hover-color);
+  @defaultBoxShadow: var(--cip-main-default-box-shadow, 0 1px 4px rgba(0,21,41,.1));
+  // top 使用和header部分的配置
+  // 菜单部分
+  .main-framework--top__nav{
+    --cip-menu-bg: var(--cip-main-top-menu-bg, @headerBg);
+    --cip-menu-color: var(--cip-main-top-menu-color, @useMenuFontColor);
+    --cip-menu-active-bg: var(--cip-main-top-menu-active-bg, @headerBg);
+    --cip-menu-active-color: var(--cip-main-top-menu-bg, @fontColor);
+    --cip-menu-active-underline-color: var(--cip-main-top-menu-active-underline-color);
+    --cip-menu-hover-font-weight: var(--cip-main-top-menu-hover-font-weight);
+    --cip-menu-hover-color: var(--cip-main-top-menu-hover-color);
+    .menu-theme--horizontal();
+  }
+  &.cip-menu-popper--horizontal{
+    --cip-menu-bg: var(--cip-main-top-popup-menu-bg, @headerBg);
+    --cip-menu-color: var(--cip-main-top-popup-menu-color, @useMenuFontColor);
+    --cip-menu-active-bg: var(--cip-main-top-popup-menu-active-bg, @menuItemActive);
+    --cip-menu-active-color: var(--cip-main-top-popup-menu-active-color, @activeFontColor);
+    .menu-theme--popup();
+  }
+  // left 使用left部分的配置
+  // 菜单部分 [注：在main-framework__aside将导致popover时样式服务正确应用，拿到外面将导致对menu-item部分的控制外溢影响--top__nav]
+  &.cip-menu-popper--vertical{
+    --cip-menu-bg: var(--cip-main-popup-menu-bg, @navBg);
+    --cip-menu-color: var(--cip-main-popup-menu-color,  @useMenuFontColor);
+    --cip-menu-active-bg: var(--cip-main-popup-menu-active-bg, @menuItemActive);
+    --cip-menu-active-color: var(--cip-main-popup-active-color, @activeFontColor);
+    --cip-menu-opened-bg: var(--cip-main-popup-menu-opened-bg, @subMenuOpened);
+    .menu-theme--popup();
+  }
+
+  .main-framework__aside{
+    --cip-menu-bg: var(--cip-main-aside-menu-bg, @navBg);
+    --cip-menu-color: var(--cip-main-aside-menu-color, @useMenuFontColor);
+    --cip-menu-active-bg: var(--cip-main-aside-menu-active-bg, @menuItemActive);
+    --cip-menu-active-color: var(--cip-main-aside-menu-active-color, @activeFontColor);
+    --cip-menu-opened-bg: var(--cip-main-aside-menu-opened-bg, @subMenuOpened);
+    --cip-menu-border-width: var(--cip-main-aside-menu-border-width);
+    --cip-menu-active-border-color: var(--cip-main-aside-menu-active-border-color);
+    --cip-menu-hover-bg: var(--cip-main-aside-menu-hover-bg);
+    --cip-menu-hover-color: var(--cip-main-aside-menu-hover-color);
+    --cip-menu-border-radius: var(--cip-main-aside-menu-border-radius);
+    --cip-menu-margin: var(--cip-main-aside-menu-margin);
+    --cip-menu-collapse-active-bg: var(--cip-main-aside-menu-collapse-active-bg);
+    --cip-menu-collapse-active-color: var(--cip-main-aside-menu-collapse-active-color);
+    --cip-menu-collapse-box-shadow: var(--cip-main-aside-menu-collapse-box-shadow);
+    .menu-theme();
+    position: relative;
+    z-index: 200;
+    background: @navBg;
+    box-shadow: var(--cip-main-aside-box-shadow, @defaultBoxShadow);
+  }
+
+  .main-framework__name{
+    background: var(--cip-main-name-bg, @navBg);
+    color: var(--cip-main-name-color, @fontColor);
+  }
+
+  .main-framework__header{
+    .main-framework__name{ // 使用header的默认颜色和背景色
+      background: @headerBg;
+      color: @fontColor;
+    }
+    background: @headerBg;
+    color: @fontColor;
+    box-shadow: var(--cip-main-header-box-shadow, @defaultBoxShadow);
+    position: relative;
+    z-index: 200;
+    .header-bar__logout{
+      border-color: @fontColor;
+    }
+    .@{elNamespace}-dropdown{
+      color: inherit;
+    }
+    .@{elNamespace}-breadcrumb__inner{
+      color: inherit;
+    }
+  }
+
+  .main-framework__content{
+    margin: var(--cip-main-content-margin);
+    border-radius: var(--cip-main-content-border-radius);
+    overflow: hidden;
+    height: var(--cip-main-content-height);
+    box-shadow: var(--cip-main-content-box-shadow);
+  }
+
+  .main-framework__main{
+    background: @mainBackground;
+  }
+  .main-framework__footer{
+    position: relative;
+    z-index: 200;
+    background: @footBg;
+    color: @fontColor;
+  }
+  .main-framework__aside__switch{
+    color: @useMenuFontColor;
+    //box-shadow: 0 1px 4px rgba(0,21,41,.3);
+  }
+
+}
+
+.main-theme--data-center{
+  @themePrimary: #1e3851;
+  --cip-main-nav-bg: @themePrimary;
+  --cip-main-header-bg: @themePrimary;
+  --cip-main-footer-bg: @themePrimary;
+  --cip-main-color: #fff;
+  --cip-main-active-font-color: #fff;
+  --cip-main-menu-item-active-bg: #104682;
+  --cip-main-sub-menu-opened-bg: #253f58;
+  --cip-main-sub-menu-opened-title-color: @primary;
+  --cip-main-menu-color: #fff;
+  --cip-main-top-menu-color: #d7efff;
+  --cip-main-top-menu-hover-color: #fff;
+}
+//
+.main-theme--light{
+  @themePrimary: #fff;
+  --cip-main-nav-bg: @themePrimary;
+  --cip-main-header-bg: @themePrimary;
+  --cip-main-footer-bg: @themePrimary;
+  --cip-main-color: #333;
+  --cip-main-active-font-color: @primary;
+  --cip-main-menu-item-active-bg: var(~'--@{elNamespace}-color-primary-light-9');
+  --cip-main-sub-menu-opened-bg: #f7f7f7;
+  --cip-main-top-menu-color: #666;
+}
+//// TODO: 黑暗模式待完善
+.main-theme--dark{
+  @themePrimary: #2f3542;
+  --cip-main-nav-bg: @themePrimary;
+  --cip-main-header-bg: @themePrimary;
+  --cip-main-footer-bg: @themePrimary;
+  --cip-main-color: #fff;
+  --cip-main-active-font-color: #409eff;
+  --cip-main-menu-item-active-bg: #444;
+  --cip-main-sub-menu-opened-bg: #001328;
+  --cip-main-sub-menu-opened-title-color: @primary;
+  //--cip-main-menu-color: blue;
+  //--cip-main-popup-menu-color: #fff;
+}
+
+.main-theme--standard{
+  @themePrimary: var(~'--@{elNamespace}-color-primary');
+  --cip-main-nav-bg: #fff;
+  --cip-main-header-bg: @themePrimary;
+  --cip-main-footer-bg: #fff;
+  --cip-main-color: #fff;
+  --cip-main-active-font-color: @themePrimary;
+  --cip-main-menu-item-active-bg: var(~'--@{elNamespace}-color-primary-light-9', #ecf5ff);
+  --cip-main-sub-menu-opened-bg: #f7f7f7;
+  --cip-main-sub-menu-opened-title-color: @primary;
+  --cip-main-menu-color: #666;
+  --cip-main-top-menu-color: #d7efff;
+  --cip-main-top-menu-hover-color: #fff;
+  // 顶部popup菜单
+  --cip-main-top-popup-menu-color: #666;
+  --cip-main-top-popup-menu-bg: #fff;
+  --cip-main-top-popup-menu-active-bg: #f4f7fa;
+  --cip-main-top-popup-menu-active-color: #666;
+
+  // left模式需要特殊修改
+  --cip-main-name-bg: @primary;
+  --cip-main-name-color: #fff;
+}
+
+.main-theme--smart-center{
+  @themePrimary: var(~'--@{elNamespace}-color-primary');
+  --cip-main-nav-bg: #fff;
+  --cip-main-header-bg: @themePrimary;
+  --cip-main-footer-bg: #fff;
+  --cip-main-color: #fff;
+  --cip-main-active-font-color: @themePrimary;
+  --cip-main-menu-item-active-bg: var(~'--@{elNamespace}-color-primary-light-9', #ecf5ff);
+  --cip-main-sub-menu-opened-bg: #f7f7f7;
+  --cip-main-sub-menu-opened-title-color: @primary;
+  --cip-main-menu-color: #666;
+  --cip-main-top-menu-color: #d7efff;
+  --cip-main-top-menu-hover-color: #fff;
+  // 顶部popup菜单
+  --cip-main-top-popup-menu-color: #666;
+  --cip-main-top-popup-menu-bg: #fff;
+  --cip-main-top-popup-menu-active-bg: #f4f7fa;
+  --cip-main-top-popup-menu-active-color: #666;
+
+  // left模式需要特殊修改
+  --cip-main-name-bg: @primary;
+  --cip-main-name-color: #fff;
+}
+html.dark{
+  --@{elNamespace}-border-color: #434343;
+  --@{elNamespace}-border-color-lighter: #2e2e2e;
+  .main-theme--supergravity{
+    //--cip-main-bg: var(~'--@{elNamespace}-bg-color-overlay');
+    //--cip-main-nav-bg: var(~'--@{elNamespace}-bg-color-overlay');
+    //--cip-main-header-bg: var(~'--@{elNamespace}-bg-color-overlay');
+    --cip-main-color: var(~'--@{elNamespace}-text-color-primary');
+    --cip-main-active-font-color: var(~'--@{elNamespace}-text-color-primary');
+    --cip-main-menu-color: var(~'--@{elNamespace}-text-color-primary');
+    --cip-main-top-menu-color: var(~'--@{elNamespace}-text-color-regular');
+    --cip-main-top-menu-hover-color: var(~'--@{elNamespace}-text-color-primary');
+    --cip-main-aside-menu-color: var(~'--@{elNamespace}-text-color-regular');
+    --cip-main-tag-active-bg: var(~'--@{elNamespace}-color-primary');
+    --cip-main-tab-active-color: var(~'--@{elNamespace}-text-color-primary');
+    --cip-main-fold-icon-bg: @bg_color;
+    --cip-cci-theme-table-header-bg: rgba(255,255,255,0.05);
+  }
+  .main-framework__aside {
+    --cip-menu-collapse-active-bg: var(--cip-main-aside-menu-collapse-active-bg-dark);
+  }
+  // .CodeMirror {
+  //   background-color: #131414!important;
+  // }
+  // .CodeMirror-gutters {
+  //   background-color: transparent!important;
+  //   border-right-color: #2e2e2e!important;
+  // }
+}
+.main-theme--supergravity{
+
+  --cip-main-nav-bg: transparent;
+  --cip-main-header-bg: transparent;
+  --cip-main-footer-bg: transparent;
+  --cip-main-icon-size: 20px;
+  --cip-main-color: #333;
+  --cip-main-active-font-color: #333;
+  --cip-main-menu-item-active-bg: transparent;
+  --cip-main-sub-menu-opened-bg: transparent;
+  --cip-main-sub-menu-opened-title-color: @primary;
+  --cip-main-menu-color: #666;
+  --cip-main-top-menu-color: #666;
+  --cip-main-top-menu-hover-font-weight: bold;
+  --cip-main-top-menu-hover-color: #666;
+  // 顶部菜单
+  --cip-main-top-menu-active-underline-color: @primary;
+  // 顶部popup菜单
+  --cip-main-top-popup-menu-color: #666;
+  --cip-main-top-popup-menu-bg: #fff;
+  --cip-main-top-popup-menu-active-bg: #f4f7fa;
+  --cip-main-top-popup-menu-active-color: #666;
+  // 左侧菜单
+  --cip-main-aside-menu-color: #2A2F36;
+  --cip-main-aside-menu-active-bg: @primary;
+  --cip-main-aside-menu-active-color: #fff;
+  --cip-main-aside-menu-border-width: 0;
+  --cip-main-aside-menu-border-radius: 4px;
+  --cip-main-aside-menu-hover-bg: transparent;
+  --cip-main-aside-menu-hover-color: @primary;
+  --cip-main-aside-menu-margin: 0 12px;
+  --cip-main-aside-menu-collapse-active-bg: #fff;
+  --cip-main-aside-menu-collapse-active-bg-dark: #192230;
+  --cip-main-aside-menu-collapse-active-color: #2A2F36;
+  --cip-main-aside-menu-collapse-box-shadow: 0px 4px 12px 0px rgba(0,72,118,0.04);
+  --cip-main-aside-menu-svg-margin: 0;
+  // 内容
+  --cip-main-content-border-radius: 8px;
+  --cip-main-content-margin: 0 20px 20px 0;
+  --cip-main-content-height: calc(100% - 20px);
+  --cip-main-content-box-shadow: 0 4px 12px 0 rgba(0,72,118,0.04);
+
+  --cip-main-default-box-shadow: none;
+  // 页签
+  --cip-main-tabs-margin: 0 0 0 0;
+  --cip-main-tabs-bg: var(~'--@{elNamespace}-bg-color');
+  --cip-main-tab-height: 40px;
+  --cip-main-tab-bg: var(~'--@{elNamespace}-bg-color');
+  // 搜索图表样式
+  --cip-main-fold-icon-padding: 8px;
+  --cip-main-fold-icon-bg: #fff;
+  --cip-main-fold-icon-size: 14px;
+  --cip-main-fold-icon-margin: 0 calc(100% - 66px) 24px 0;
+  --cip-main-fold-icon-border-radius: 4px;
+  // 页脚
+  --cip-main-frame-footer-height: 52px;
+  // 背景
+  --cip-main-bg: transparent;
+  --cip-scroll-panel-arrows-opacity: 1;
+}

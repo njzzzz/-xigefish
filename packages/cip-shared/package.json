@@ -1,0 +1,35 @@
+{
+  "name": "@xigefish/shared",
+  "version": "5.0.2",
+  "description": " d-render部分共享utils hooks helper",
+  "module": "./esm/main.js",
+  "types": "./types/main.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "shared",
+    "utils",
+    "@xigefish"
+  ],
+  "exports": {
+    ".": {
+      "import": "./esm/main.js",
+      "types": "./types/main.d.ts"
+    },
+    "./*.js": {
+      "import": "./esm/*.js",
+      "types": "./types/*.d.ts"
+    },
+    "./*": {
+      "import": "./esm/*.js",
+      "types": "./types/*.d.ts"
+    }
+  },
+  "author": "xmf",
+  "license": "MIT",
+  "dependencies": {
+    "element-plus": "2.2.22",
+    "vue": "^3.2.47"
+  }
+}

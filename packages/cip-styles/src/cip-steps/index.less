@@ -1,0 +1,28 @@
+.is-error-icon{
+  color: @danger;
+  font-size: 24px;
+}
+
+.@{elNamespace}-steps--horizontal.title-up{
+  .@{elNamespace}-step{
+    display: flex;
+    &__main{
+      position: relative;
+      right: calc(100% - 48px);
+      transform: translateX(100%);
+      top: -7px;
+      padding-right: 16px;
+      flex-shrink: 0;
+      max-width: 50%;
+      background: @bg_color;
+    }
+    &__head{
+      position: initial;
+    }
+  }
+}
+.title-up{
+  // .@{elNamespace}-step:last-of-type.is-flex{
+
+  // }
+}

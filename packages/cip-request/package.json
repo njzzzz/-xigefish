@@ -1,0 +1,26 @@
+{
+  "name": "@xigefish/request",
+  "version": "6.1.2",
+  "description": "基于axios二次封装的请求库",
+  "main": "./esm/index.js",
+  "module": "./esm/index.js",
+  "types": "./types/index.d.ts",
+  "files": [
+    "src",
+    "esm",
+    "types",
+    "CHANGELOG.md"
+  ],
+  "keywords": [
+    "axios",
+    "request"
+  ],
+  "author": "xmf",
+  "license": "ISC",
+  "dependencies": {
+    "@xigefish/d-render-shared": "workspace: *",
+    "axios": "0.x",
+    "qs": "6.x",
+    "url-template": "2.x"
+  }
+}

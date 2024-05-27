@@ -1,0 +1,68 @@
+@import '../theme/variate.less';
+
+// el-pagination 组件样式与数据中台统一
+// el-pagination 紧凑型样式(数据中台)
+.cip-pagination {
+  // element-plus2 将el-pagination设置为flex导致起宽度变为100%无法使用 text-align对其进行位置控制将其设置为inline-flex
+  display: inline-flex;
+  font-size: 14px;
+  .btn-prev, .btn-next {
+    i {
+      margin: 0 auto;
+    }
+    &:disabled{
+      background: @bg_color; //var(~"--@{elNamespace}-bg-color");
+    }
+  }
+  .@{elNamespace}-pagination__jump {
+    .@{elNamespace}-pagination__editor {
+      margin: 0 8px;
+    }
+  }
+}
+// ERROR: 此模式需要修复
+.cip-pagination__compact {
+  &.@{elNamespace}-pagination.is-background {
+    .btn-prev, .btn-next {
+      margin: 0;
+      background: @bg_color; //var(~"--@{elNamespace}-bg-color");
+
+    }
+
+    .btn-prev {
+      border: 1px solid @border_color; //rgb(217, 217, 217);
+      border-right: none;
+      border-radius: 0;
+    }
+
+    .btn-next {
+      border: 1px solid @border_color; //rgb(217, 217, 217);
+      border-radius: 0;
+    }
+
+    .@{elNamespace}-pager li:not(.disabled).number.active {
+      background: #ecf5ff;
+      color: @primary;
+    }
+
+    .@{elNamespace}-pager li.more {
+      background: @bg_color; //var(~"--@{elNamespace}-bg-color");
+      border: 1px solid @border_color; //rgb(217, 217, 217);
+      border-right: none;
+      border-radius: 0;
+      margin: 0;
+      color: #a6a6a6;
+    }
+
+    .@{elNamespace}-pager {
+      .number {
+        background: @bg_color;// var(~"--@{elNamespace}-bg-color");
+        border: 1px solid @border_color; //rgb(217, 217, 217);
+        border-right: none;
+        border-radius: 0;
+        margin: 0;
+        color: #a6a6a6;
+      }
+    }
+  }
+}

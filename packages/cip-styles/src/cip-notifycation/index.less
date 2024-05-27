@@ -1,0 +1,22 @@
+.@{elNamespace}-notification {
+  // border-radius: 2px;
+  &.cip-notification-success {
+    border-color: @success; //  var(~'--@{elNamespace}-color-success');
+    background-color: var(~'--@{elNamespace}-color-success-light-9');
+  }
+  &.cip-notification-error {
+    border-color:  var(~'--@{elNamespace}-color-error');
+    background-color: var(~'--@{elNamespace}-color-error-light-9');
+  }
+  &.cip-notification-warning {
+    border-color: @warning; // var(~'--@{elNamespace}-color-warning');
+    background-color: var(~'--@{elNamespace}-color-warning-light-9');
+  }
+  &.cip-notification-info {
+    border-color: @primary;// var(~'--@{elNamespace}-color-primary');
+    background-color: var(~'--@{elNamespace}-color-primary-light-9');
+    .@{elNamespace}-notification__icon {
+      color: @primary; //var(~'--@{elNamespace}-color-primary');
+    }
+  }
+}

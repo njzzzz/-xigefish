@@ -1,0 +1,108 @@
+.main-framework__header{
+  height: 64px;
+  overflow: hidden;
+  .header-bar{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 32px 0 8px;
+    margin-left: auto;
+  }
+
+  .main-framework__name {
+    width: auto;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 0 30px 0 22px;
+  }
+  // 此部分内容输入主题
+  .main-framework--top__nav {
+    .@{elNamespace}-menu.cip-main-nav {
+      .@{elNamespace}-sub-menu__title, .@{elNamespace}-menu-item {
+        height: 64px;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 0 16px;
+      }
+
+      .@{elNamespace}-sub-menu, .@{elNamespace}-menu-item {
+        &.is-active {
+          font-weight: 600;
+          .@{elNamespace}-sub-menu__title {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  .account-name{
+    cursor: pointer;
+    margin-left: 8px;
+    //font-weight: bold;
+  }
+  .header-user{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    height: 100%;
+    .@{elNamespace}-dropdown{
+      height: 100%;
+    }
+    .header-bar__logout{
+      padding-left: 12px;
+      margin-left: 12px;
+      border-left: 1px solid transparent;
+      line-height: 1em;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}
+.horizontal-menu {
+  width: 100%;
+  overflow-x: auto;
+  transition: all 0.5s;
+  scroll-behavior: smooth;
+  &.hasNavArrow {
+    .el-menu:after {
+      content: "";
+      display: inline-block;
+      width: 75px;
+      height: 40px;
+      flex-shrink: 0;
+    }
+    .header-arrows {
+      display: block;
+    }
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .header-arrows {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 99;
+    height: 100%;
+    width: 75px;
+    background: linear-gradient(270deg, @primary, rgba(55, 134, 253, 0.98) 43%, rgba(55, 134, 253, 0.63));
+    box-shadow: -2px 0px 8px 0px var(~'--@{elNamespace}-color-primary-dark-2');
+    line-height: 64px;
+    color: @bg_color;
+    font-size: 20px;
+    text-align: center;
+    i {
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.5s;
+    }
+    i + i {
+      margin-left: 10px;
+    }
+    &:hover i {
+      opacity: 1;
+    }
+  }
+}

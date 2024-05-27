@@ -1,0 +1,26 @@
+.cip-dynamic-video__container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .m-player{
+    height: 100% !important; // 原始值为auto
+  }
+  .cip-dynamic-video{
+    &__mask{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1999;
+    }
+    &__play{
+      cursor: pointer;
+      width: 20%;
+      height: 20%;
+    }
+  }
+}

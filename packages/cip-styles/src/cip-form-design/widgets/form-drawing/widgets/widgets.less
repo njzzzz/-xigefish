@@ -1,0 +1,46 @@
+.cip-fd-form-drawing-container{
+  position: relative;
+  box-sizing: border-box;
+  height: calc(100% - 45px);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  overflow-x: hidden;
+  .empty-form--text{ // 无组件时
+
+  }
+  // 表单画布
+  .cip-fd-form-drawing{
+    // pc端
+    &--pc{
+      width: 100%;
+      height: 100%;
+    }
+    // 移动端
+    &--mobile{
+      width: 375px;
+      height: 667px;
+      .form-content{
+        border-radius: 8px; // 移动端 圆角
+      }
+    }
+    // 画布下cip-form的宽度
+    .cip-form{
+      height: 100%;
+    }
+  }
+  // 表单内容容器(公共)
+  .cip-fd-form-content__wrapper{
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100%;
+    border: 1px dashed #333;
+    background: #fff;
+
+    .@{elNamespace}-form-item__content{
+      margin: 0 !important;
+    }
+  }
+}

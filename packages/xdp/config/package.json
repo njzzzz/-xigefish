@@ -1,0 +1,41 @@
+{
+  "name": "@xigefish/config",
+  "version": "1.0.3",
+  "description": "组件属性控制器",
+  "main": "./esm/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "config",
+    "component",
+    "vue3",
+    "vue2"
+  ],
+  "exports": {
+    ".": {
+      "import": "./esm/main.js",
+      "types": "./types/main.d.ts"
+    },
+    "./*": {
+      "import": "./*",
+      "types": "./types/*"
+    }
+  },
+  "dependencies": {
+    "deepmerge": "^4.3.1",
+    "vue": ">= 3.2.0",
+    "@xigefish/d-render-shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "eslint": "^8.49.0",
+    "eslint-plugin-vue": "^9.17.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "xmf",
+  "license": "ISC"
+}

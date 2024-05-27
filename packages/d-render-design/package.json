@@ -1,0 +1,35 @@
+{
+  "name": "@xigefish/d-render-design",
+  "version": "1.0.6",
+  "description": "d-render数据渲染库的schema设计组件",
+  "main": "./esm/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "@xigefish/d-render",
+    "design",
+    "scheme"
+  ],
+  "author": "xmf",
+  "license": "MIT",
+  "files": [
+    "esm",
+    "types"
+  ],
+  "dependencies": {
+    "@xigefish/code-mirror": "workspace: *",
+    "@xigefish/components": "workspace: *",
+    "@xigefish/button": "workspace: *",
+    "@xigefish/d-render-shared": "workspace: *",
+    "@xigefish/d-render-shared": "workspace: *",
+    "@xigefish/d-render": "workspace: *",
+    "element-plus": "2.2.22",
+    "uuid": ">=8.0.0",
+    "vue": "^3.2.47",
+    "vuedraggable": "4.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

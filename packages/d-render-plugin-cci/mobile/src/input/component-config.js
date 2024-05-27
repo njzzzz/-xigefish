@@ -1,0 +1,22 @@
+export default {
+  checkbox: () => import('./basic/checkbox/mobile'),
+  date: () => import('./basic/date-picker/mobile'),
+  divider: () => import('./basic/divider/mobile'),
+  file: () => import('./basic/file/mobile'),
+  image: () => import('./basic/image/mobile'),
+  input: () => import('./basic/input/mobile'),
+  number: () => import('./basic/number/mobile'),
+  radio: () => import('./basic/radio/mobile'),
+  rate: () => import('./basic/rate/mobile'),
+  select: () => import('./basic/select/mobile'),
+  slider: () => import('./basic/slider/mobile'),
+  switch: () => import('./basic/switch/mobile'),
+  table: () => import('./basic/table/mobile'),
+  text: () => import('./basic/text/mobile'),
+  textarea: () => import('./basic/textarea/mobile'),
+  dateRange: () => import('./extension/date-range/mobile'),
+  numberRange: () => import('./extension/number-range/mobile'),
+  timeRange: () => import('./extension/time-range/mobile'),
+  time: () => import('./basic/time-select/mobile'),
+  staticInfo: () => import('./basic/static-info/mobile')
+}

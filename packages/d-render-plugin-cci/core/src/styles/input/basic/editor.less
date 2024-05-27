@@ -1,0 +1,29 @@
+.basic-editor-view{
+  width: 100%;
+  // 富文本中标签清除默认样式
+  .w-e-text-container{
+    height: 310px !important; // 于17行的多行文本一样搞
+  }
+  *{
+    margin: 0;
+    padding: 0
+  }
+  ul,ol{list-style:none;}
+  /* table 样式 */
+  table {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+  }
+  table td,
+  table th {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 3px 5px;
+  }
+  table th {
+    border-bottom: 2px solid #ccc;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+}

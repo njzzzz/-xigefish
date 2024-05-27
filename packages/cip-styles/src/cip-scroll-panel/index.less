@@ -1,0 +1,63 @@
+.cip-scroll-panel--horizontal {
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    &.cip-scroll-panel--has-arrow {
+      &:hover{
+        .cip-scroll-panel---arrows{
+          i {
+            opacity: 1;
+            &[disabled="true"] {
+              opacity: 0.7;
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+      .cip-scroll-panel--horizontal-content {
+        display: inline-flex;
+      }
+      .cip-scroll-panel--horizontal-content:after {
+        content: "";
+        display: inline-block;
+        width: 75px;
+        height: 40px;
+        flex-shrink: 0;
+      }
+      .cip-scroll-panel---arrows {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .cip-scroll-panel---arrows {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 99;
+      height: 100%;
+      width: 75px;
+      background: linear-gradient(to right, transparent, var(--cip-main-header-bg) 35%);
+      box-shadow: -2px 0 8px 0 #0015291a;
+      line-height: 64px;
+      color: var(--cip-menu-color);
+      font-size: 20px;
+      text-align: center;
+      i {
+        cursor: pointer;
+        opacity: var(--cip-scroll-panel-arrows-opacity, 0);
+        transition: all 0.5s;
+        &[disabled="true"] {
+          opacity: min(0.7, var(--cip-scroll-panel-arrows-opacity, 0));
+          cursor: not-allowed;
+        }
+      }
+      i + i {
+        margin-left: 10px;
+      }
+    }
+  }

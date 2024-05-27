@@ -1,0 +1,55 @@
+{
+  "name": "@xigefish/d-render-plugin-cci-mobile",
+  "version": "1.0.10",
+  "description": "cci用于d-render的移动端插件",
+  "module": "./esm/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "esm",
+    "types",
+    "dist",
+    "src"
+  ],
+  "exports": {
+    ".": "./esm/main.js",
+    "./*.js": {
+      "import": "./esm/*.js",
+      "types": "./types/*.d.ts"
+    },
+    "./dist/*": "./dist/*",
+    "./*": {
+      "import": [
+        "./esm/*.js",
+        "./esm/*/index.js",
+        "./esm/*"
+      ],
+      "types": "./types/*.d.ts"
+    }
+  },
+  "keywords": [
+    "@xigefish/d-render",
+    "plugin",
+    "input",
+    "layout",
+    "cci",
+    "mobile"
+  ],
+  "dependencies": {
+    "@element-plus/icons-vue": ">= 2.1.0",
+    "element-plus": "2.2.22",
+    "@xigefish/d-render-plugin-cci": "workspace:*",
+    "@xigefish/button": "workspace:*",
+    "@xigefish/d-render-shared": "workspace: *",
+    "@xigefish/d-render": "workspace: *",
+    "dayjs": "1.x",
+    "vant": "^3.0.0",
+    "vue": "^3.2.47"
+  },
+  "author": "xmf",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

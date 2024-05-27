@@ -1,0 +1,78 @@
+@import '../theme/variate.less';
+
+.cip-tree{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .filter-tree.@{elNamespace}-tree--highlight-current{
+    .@{elNamespace}-tree-node:not(.is-current):focus>.@{elNamespace}-tree-node__content{
+      background: transparent;
+    }
+  }
+  &__header {
+    margin: 8px 0;
+    display: flex;
+    .@{elNamespace}-button {
+      flex: 1;
+      margin: 0;
+    }
+  }
+  &__filter{
+    padding-top: 0;
+  }
+  &__scrollbar{
+    flex: 1;
+  }
+  .custom-tree-node{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--font-text);
+    padding-right: 8px;
+    position: relative;
+    overflow: hidden;
+    .operation {
+      display: none;
+      position: absolute;
+      right: 0;
+      padding-right: 8px;
+      background:  @fill_color;//#f0f7ff;
+    }
+    .view-node {
+      position: absolute;
+      right: 0;
+      padding-right: 8px;
+    }
+    &__text{
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    &:hover {
+      .operation {
+        margin-left: 10px;
+        display: inline-block !important;
+      }
+    }
+    & .is_disabled{
+      color:var(~'--@{elNamespace}-text-color-disabled')
+    }
+    & .icon-node{
+      margin-right:9px
+    }
+  }
+  &&--border{
+    border:1px solid @border_color_light;
+    padding:11px 11px 88px;
+    height:auto
+  }
+}
+// 兼容6.0.39以前版本
+.border{
+  border:1px solid @border_color_light;
+  padding:11px 11px 88px;
+  height:auto
+}

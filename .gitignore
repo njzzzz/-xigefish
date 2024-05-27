@@ -1,0 +1,20 @@
+node_modules
+dist
+packages/**/esm/
+packages/**/types/*
+!packages/**/types/.gitkeep
+!packages/cip-components/types/*
+!packages/cip-utils/types/*
+!packages/xdp/types/**
+
+.deprecated
+.temp
+#/packages/cip-components/esm
+#/packages/cip-hooks/esm
+#/packages/cip-plugins/esm
+#/packages/cip-request/esm
+#/packages/cip-utils/esm
+# ide files
+.idea
+.vscode
+.DS_Store

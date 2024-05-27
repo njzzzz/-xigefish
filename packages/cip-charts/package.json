@@ -1,0 +1,34 @@
+{
+  "name": "@xigefish/charts",
+  "version": "1.0.5",
+  "description": "基于echarts封装的vue3代码编辑器组件",
+  "main": "./esm/main.js",
+  "types": "./esm/main.d.ts",
+  "scripts": {
+    "gen:types": "node ./gen-types.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./esm/main.js",
+      "types": "./esm/main.d.ts"
+    }
+  },
+  "keywords": [
+    "echarts",
+    "vue3"
+  ],
+  "author": "xmf",
+  "license": "MIT",
+  "files": [
+    "esm",
+    "src",
+    "types"
+  ],
+  "dependencies": {
+    "@xigefish/d-render-shared": "workspace: *",
+    "@xigefish/shared": "workspace: *",
+    "@xigefish/types": "workspace: *",
+    "vue": "3.x",
+    "echarts": "^5"
+  }
+}

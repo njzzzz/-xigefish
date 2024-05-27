@@ -1,0 +1,20 @@
+export default {
+  checkbox: () => import('./basic/checkbox/configure'),
+  date: () => import('./basic/date-picker/configure'),
+  editor: () => import('./basic/editor/configure'),
+  file: () => import('./basic/file/configure'),
+  image: () => import('./basic/image/configure'),
+  input: () => import('./basic/input/configure'),
+  number: () => import('./basic/number/configure'),
+  radio: () => import('./basic/radio/configure'),
+  rate: () => import('./basic/rate/configure'),
+  select: () => import('./basic/select/configure'),
+  slider: () => import('./basic/slider/configure'),
+  switch: () => import('./basic/switch/configure'),
+  text: () => import('./basic/text/configure'),
+  textarea: () => import('./basic/textarea/configure'),
+  time: () => import('./basic/time-select/configure'),
+  dateRange: () => import('./extension/date-range/configure'),
+  numberRange: () => import('./extension/number-range/configure'),
+  timeRange: () => import('./extension/time-range/configure')
+}

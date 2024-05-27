@@ -1,0 +1,43 @@
+{
+  "name": "@xigefish/hooks",
+  "version": "6.1.0",
+  "sideEffects": false,
+  "description": "vue3 hooks",
+  "main": "./esm/main.js",
+  "module": "./esm/main.js",
+  "types": "./types/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./esm/main.js",
+      "types": "./types/main.d.ts"
+    },
+    "./*.js": {
+      "import": "./esm/*.js",
+      "types": [
+        "./types/*.d.ts",
+        "./types/*/index.d.ts"
+      ]
+    },
+    "./*": {
+      "import": [
+        "./esm/*.js",
+        "./esm/*/index.js",
+        "./esm/*"
+      ],
+      "types": [
+        "./types/*.d.ts",
+        "./types/*/index.d.ts"
+      ]
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@xigefish/components": "workspace: *",
+    "@xigefish/d-render-shared": "workspace: *",
+    "element-plus": "2.2.22",
+    "vue": "3.x",
+    "vue-router": "4.x"
+  }
+}

@@ -1,0 +1,149 @@
+@import '../../../../theme/variate.less';
+
+.cip-fd-form-drawing{
+  .form-drawing__table{
+    //background-color: fade(@warning, 10%);
+    background-color: var(~'--@{elNamespace}-color-warning-light-9');
+    //background-color: @warning;
+    box-sizing: border-box;
+    border: 1px dashed #999;
+    .form-table-columns{
+      background: #fff;
+      box-sizing: border-box;
+    }
+    .table-design__drag-wrapper{
+      box-sizing: border-box;
+      height: 100%;
+      border: 1px dashed #ddd;
+    }
+    &.is-active:not(.ghost){
+      border-color: @warning ;
+      outline-color: @warning ;
+      >.show-focus{
+        visibility: visible;
+      }
+      .handle-icon{
+        padding: 4px;
+        color: #fff;
+        background-color: @warning;
+      }
+    }
+
+  }
+}
+
+.cip-fd-form-drawing--pc{
+  // 仅对第一个el-form-item__content做flex处理
+  .form-drawing__table__main > .@{elNamespace}-form-item {
+    //margin-bottom: 0;
+    & > .@{elNamespace}-form-item__content{
+      display: flex;
+    }
+  }
+  .table-design--pc {
+    width: 100%
+  }
+  .table-design__drag-wrapper{
+    flex-grow: 2;
+    width: 0;
+    overflow: auto;
+    background: #fff;
+  }
+  .form-table-columns{
+    height: 100%;
+    border-bottom: 1px solid #ddd;
+    // table内部的item样式
+    .form-drawing__item{
+      &.table-ghost:not(.ghost){ // 拖动时的样式
+        margin: 0;
+        width: 0 !important;
+        border: 2px solid @danger;
+        height: 90%;
+        overflow: hidden;
+        .@{elNamespace}-form-item{
+          display: none;
+        }
+      }
+      .@{elNamespace}-form-item{
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+      }
+      .@{elNamespace}-form-item__label{
+        box-sizing: border-box;
+        line-height: 1em;
+        font-weight: 700;
+        color: #909399;
+        height: 48px;
+        display: block;
+        width: 100%!important;
+        padding: 12px 10px;
+        text-align: left;
+        justify-content: flex-start; // el-form-item__label默认开启flex导致text-align无效
+        background: #ecf5ff;
+        border-bottom: 1px solid #ddd;
+      }
+      .@{elNamespace}-form-item__content{
+        box-sizing: border-box;
+        width: 100%;
+        flex-grow: 2;
+        background: #fff;
+        padding: 12px 10px;
+      }
+    }
+  }
+  .table-design__column{ // 序号和操作
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+    width: 55px;
+    height: 100%;
+    &--index {
+      width: 55px;
+      height: 100%;
+    }
+    &--operate {
+      width: 80px;
+      height: 100%;
+    }
+    &__label{
+      box-sizing: border-box;
+      line-height: 1em;
+      font-weight: 700;
+      color: #909399;
+      height: 52px;
+      display: block;
+      width: 100%!important;
+      padding: 12px 10px;
+      text-align: left;
+      background: #ecf5ff;
+      border-bottom: 1px solid #ddd;
+    }
+    &__content{
+      background: #fff;
+      padding: 12px 10px;
+      flex-grow: 2;
+      line-height: 32px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.cip-fd-form-drawing--mobile{
+  .table-design__drag-wrapper{
+    width: 100%;
+  }
+  .form-drawing__item{
+    &.table-ghost{ // 拖动时的样式
+      margin: 0;
+      width: auto;
+      border: 2px solid @danger;
+      height: 0;
+      overflow: hidden;
+    }
+  }
+  .form-table-columns{
+    min-height: 64px;
+  }
+}

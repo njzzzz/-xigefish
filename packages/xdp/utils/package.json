@@ -1,0 +1,31 @@
+{
+  "name": "@xigefish/d-render-shared",
+  "version": "1.0.2",
+  "description": "组件属性控制器",
+  "main": "./esm/main.js",
+  "types": "./types/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./esm/main.js",
+      "types": "./types/main.d.ts"
+    },
+    "./*": {
+      "import": "./*",
+      "types": "./types/*"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "util",
+    "tool",
+    "helper"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "xmf",
+  "license": "ISC"
+}

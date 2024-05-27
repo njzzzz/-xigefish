@@ -1,0 +1,33 @@
+{
+  "name": "@xigefish/store",
+  "version": "1.0.1",
+  "description": "组件属性控制器",
+  "main": "./esm/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "config",
+    "component",
+    "vue3"
+  ],
+  "exports": {
+    ".": {
+      "import": "./esm/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./*": {
+      "import": "./*",
+      "types": "./types/*"
+    }
+  },
+  "dependencies": {
+    "vue": ">= 3.2.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "xmf",
+  "license": "ISC"
+}

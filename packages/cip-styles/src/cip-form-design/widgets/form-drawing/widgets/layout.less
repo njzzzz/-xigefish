@@ -1,0 +1,25 @@
+@import '../../../../theme/variate.less';
+
+.cip-fd-form-drawing {
+  .form-drawing__layout {
+    min-height: 30px;
+    //background-color: fade(@warning, 10%);
+    background-color: var(~'--@{elNamespace}-color-warning-light-9');
+    border: 1px dashed #999;
+    &__item{
+      height: 100%;
+      border: 1px dashed #ddd;
+      background: #fff;
+      min-height: 50px;
+    }
+    &.is-active:not(.ghost) {
+      border-color: @warning;
+      outline-color: @warning;
+      .handle-icon {
+        background-color: @warning;
+      }
+    }
+  }
+}
+
+

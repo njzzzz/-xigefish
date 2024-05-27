@@ -1,0 +1,80 @@
+@itemBg: var(--cip-main-tab-bg, @fill_color); //var(~'--@{elNamespace}-fill-color')
+@itemHeight: var(--cip-main-tab-height, 31px);
+.cip-main-tabs{
+  margin: var(--cip-main-tabs-margin, 16px 0 0);
+  background: var(--cip-main-tabs-bg);
+  border-radius: var(--cip-main-tabs-radius);
+  .@{elNamespace}-tabs{
+    .@{elNamespace}-tabs__nav{
+      border: none !important;
+    }
+    &__item{
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+  .@{elNamespace}-tabs{
+    &--card{
+      --@{elNamespace}-font-size-base: 12px; // 重置为12px
+      --@{elNamespace}-tabs-header-height: @itemHeight;
+      --@{elNamespace}-text-color-primary: @text_color_regular; //var(~'--@{elNamespace}-text-color-regular'); // 重置为regular
+      & > .@{elNamespace}-tabs__header{
+        margin-bottom: unset;
+        padding: 0 20px;
+        .@{elNamespace}-tabs__nav-wrap.is-scrollable{
+          padding: 0 33px;
+        }
+        .tabs__nav_button(){
+          width: 32px;
+          height: @itemHeight;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background-color: @itemBg;
+        }
+        .@{elNamespace}-tabs__nav-prev{
+          .tabs__nav_button();
+          margin-right: 1px;
+          &.is-disabled{
+            color: var(~'--@{elNamespace}-text-color-disabled');
+          }
+        }
+        .@{elNamespace}-tabs__nav-next{
+          .tabs__nav_button();
+          margin-left: 1px;
+          &.is-disabled{
+            color: var(~'--@{elNamespace}-text-color-disabled');
+          }
+        }
+        .@{elNamespace}-tabs__nav{
+          border: none;
+        }
+        .@{elNamespace}-tabs__item{
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+          border-radius: var(~'--@{elNamespace}-border-radius-base');
+          background: @itemBg;
+          border: none;
+          vertical-align: middle;
+          &.is-closable .is-icon-close{
+            width: 1em !important;
+            height: 1em !important;
+          }
+          & + .@{elNamespace}-tabs__item{
+            margin-left:1px;
+          }
+          &.is-active{
+            color: var(--cip-main-tab-active-color);
+            background-color: var(--cip-main-tag-active-bg,var(~'--@{elNamespace}-color-primary-light-9')); //#e0edff
+          }
+        }
+      }
+    }
+  }
+  .cip-main-tab__label{
+    display: inline-block;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

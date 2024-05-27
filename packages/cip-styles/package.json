@@ -1,0 +1,24 @@
+{
+  "name": "@xigefish/styles",
+  "version": "6.1.15",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports": {
+    ".": "./dist/index.css",
+    "./CHANGELOG.md": "./CHANGELOG.md",
+    "./ep": "./dist/ep.css",
+    "./ep.css": "./dist/ep.css",
+    "./dist/*": "./dist/*",
+    "./*": [
+      "./src/*.less",
+      "./src/*/index.less",
+      "./src/*"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

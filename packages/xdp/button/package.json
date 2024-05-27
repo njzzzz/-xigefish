@@ -1,0 +1,59 @@
+{
+  "name": "@xigefish/button",
+  "version": "1.2.4",
+  "sideEffects": [
+    "./dist/*"
+  ],
+  "description": "button el-button vue3",
+  "main": "./esm/main.js",
+  "types": "./types/main.d.ts",
+  "module": "./esm/main.js",
+  "scripts": {
+    "gen:types": "node ./gen-types.js"
+  },
+  "files": [
+    "esm",
+    "types",
+    "dist",
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "import": "./esm/main.js",
+      "types": "./types/main.d.ts"
+    },
+    "./style": {
+      "import": "./dist/index.css"
+    },
+    "./dist/*.css": {
+      "import": "./dist/*.css"
+    },
+    "./*": {
+      "import": "./*",
+      "types": "./types/*"
+    }
+  },
+  "keywords": [
+    "button",
+    "vue3",
+    "vue",
+    "el-button"
+  ],
+  "author": "xmf",
+  "license": "MIT",
+  "dependencies": {
+    "@xigefish/d-render-shared": "workspace: *",
+    "@element-plus/icons-vue": "^2.1.0",
+    "@xigefish/config": "workspace:*",
+    "@xigefish/types": "workspace:*",
+    "@xigefish/d-render-shared": "workspace:*",
+    "element-plus": "^2.4.1",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "eslint": "^8.49.0",
+    "eslint-plugin-vue": "^9.17.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

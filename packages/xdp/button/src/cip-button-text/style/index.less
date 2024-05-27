@@ -1,0 +1,21 @@
+.cip-button-text{
+  user-select: none;
+  padding: 0 !important;
+  &+&{
+    //margin-left: 10px;
+  }
+  &::after{
+
+    display: none;
+  }
+  &--small{
+    font-size: var(~'--@{elNamespace}-font-size-extra-small');
+  }
+  &--default,&--large{
+    font-size: var(~'--@{elNamespace}-font-size-base');
+    //font-size: 12px;
+  }
+  //&--default, &--large{
+  //  font-size: 14px;
+  //}
+}

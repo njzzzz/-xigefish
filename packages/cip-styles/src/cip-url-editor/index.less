@@ -1,0 +1,31 @@
+.cip-url-editor{
+  display: flex;
+  background: @bg_color; //#fff;
+  &__protocol{
+    width: 100px;
+    flex-shrink: 0;
+    .@{elNamespace}-input__inner{
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      border-right-width: 0;
+    }
+  }
+  &__host{
+    width: 400px;
+  }
+  &__port{
+    width: 200px;
+  }
+  &__host, &__port{
+    .@{elNamespace}-input__inner{
+      border-radius: 0;
+      border-right-width: 0;
+    }
+  }
+  &__path{
+    .@{elNamespace}-input__inner{
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+  }
+}

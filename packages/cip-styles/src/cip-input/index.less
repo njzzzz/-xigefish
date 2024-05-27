@@ -1,0 +1,34 @@
+.cip-input{
+  &--fix-border{
+    .@{elNamespace}-input__prefix{
+      margin-right: 12px;
+    }
+    // 调整prefix内部字体，以及右侧加竖线
+    .@{elNamespace}-input__prefix-inner{
+      margin-top: 7px;
+      margin-bottom: 7px;
+      border-right: 1px solid @border_color; //var(~'--@{elNamespace}-border-color'); // 此处为固定颜色与边框颜色脱离
+      line-height: calc(32px - 14px);
+      padding-right: 10px;
+      &>:last-child{
+        margin-right: 0; //覆盖默认行为
+      }
+    }
+  }
+  &--suffix-border{
+    .@{elNamespace}-input__suffix{
+      margin-left: 12px;
+    }
+    // 调整prefix内部字体，以及右侧加竖线
+    .@{elNamespace}-input__suffix-inner{
+      margin-top: 7px;
+      margin-bottom: 7px;
+      border-left: 1px solid @border_color; //var(~'--@{elNamespace}-border-color'); // 此处为固定颜色与边框颜色脱离
+      line-height: calc(32px - 14px);
+      padding-left: 10px;
+      &>:first-child{
+        margin-left: 0; //覆盖默认行为
+      }
+    }
+  }
+}

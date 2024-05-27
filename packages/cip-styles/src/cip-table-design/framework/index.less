@@ -1,0 +1,35 @@
+.side-style-mixin{
+  flex-shrink: 0;
+  width: 250px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+.cip-td-dynamic-form-design{
+  display: flex;
+  height: 100%;
+  &__components{
+    .side-style-mixin;
+    padding: 8px 0;
+  }
+  &__form{
+    box-sizing: border-box;
+    height: 100%;
+    flex-grow: 1;
+    min-width: 300px;
+    border-style: solid;
+    border-color: #ddd;
+    border-width: 1px 0 1px 0;
+  }
+  &__toolbar{
+    height: 45px;
+    padding: 0 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    line-height: 45px;
+    text-align: right;
+  }
+  &__property{
+    .side-style-mixin;
+    width: 300px;
+  }
+}

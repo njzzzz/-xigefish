@@ -1,0 +1,73 @@
+.cip-tabs-plus{
+  position: relative;
+  &.use-intersection{
+    .@{elNamespace}-tabs{
+      &__header{
+        .@{elNamespace}-tabs__nav-prev{
+          display: none;
+        }
+        .@{elNamespace}-tabs__nav-next{
+          display: none;
+        }
+        .@{elNamespace}-tabs__nav-wrap.is-scrollable{
+          padding: 0 40px 0 0;
+        }
+        &.is-top, &.is-bottom{
+          height: 40px;
+          overflow: hidden;
+          .@{elNamespace}-tabs__nav-wrap.is-scrollable{
+            padding: 0 40px 0 0;
+
+            .@{elNamespace}-tabs__nav-scroll{ // hide scrollbar
+              overflow: auto;
+              padding-bottom: 10px;
+            }
+          }
+        }
+        &.is-left, &.is-right{
+          .@{elNamespace}-tabs__nav-wrap.is-scrollable{
+            padding: 0 0 30px;
+
+            .@{elNamespace}-tabs__nav-scroll{
+              overflow: auto;
+              // padding-right: 2px;
+              scrollbar-width: none; /* firefox */
+              -ms-overflow-style: none; /* IE 10+ */
+              &::-webkit-scrollbar {
+                display: none; /* Chrome Safari */
+              }
+            }
+          }
+        }
+      }
+    }
+    .@{elNamespace}-tabs__nav-wrap.is-scrollable::after{
+      bottom: 16px;
+    }
+  }
+  .no-underline{
+    .@{elNamespace}-tabs__nav-wrap::after{
+      display: none;
+    }
+  }
+
+  &__more{
+    position: absolute;
+    z-index: 999;
+    cursor: pointer;
+    .cip-dropdown__icon{
+      display: none;
+    }
+    &.top {
+      right: 0;
+      top: 13px;
+    }
+    &.bottom{
+      right: 0;
+      bottom: 13px;
+    }
+    &.left, &.right{ // left and right attributes need js to set
+      bottom: 6px;
+    }
+  }
+}

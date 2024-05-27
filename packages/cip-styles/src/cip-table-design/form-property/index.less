@@ -1,0 +1,33 @@
+@import '../../theme/variate.less';
+.cip-td-dynamic-form-design {
+  .cip-td-form-property{
+    height: 100%;
+    .config-form-wrapper{
+      height: calc(100% - 45px);
+      position: relative;
+      overflow: auto;
+      .cip-form{
+        padding: 10px;
+      }
+      //padding: 10px;
+    }
+    .config-tabs{
+      display: flex;
+      height: 45px; // 与toolbar 高度相同
+      border-bottom: 1px solid #ddd;
+    }
+    .config-tab{
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 400;
+      border-bottom: 3px solid transparent;
+      &.config-tab--active{
+        border-bottom-color:  @primary;
+      }
+    }
+  }
+}

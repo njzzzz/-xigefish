@@ -1,0 +1,38 @@
+{
+  "name": "@xigefish/micro-app",
+  "version": "1.0.22",
+  "description": "基于codemirror5封装的vue3代码编辑器组件",
+  "main": "./esm/v3.js",
+  "files": [
+    "esm",
+    "types",
+    "src"
+  ],
+  "exports": {
+    "./v2/sub": {
+      "import": "./esm/v2/index.js"
+    },
+    "./v3/base": {
+      "import": "./esm/v3/base/index.js"
+    },
+    "./v3/sub": {
+      "import": "./esm/v3/sub/index.js"
+    },
+    "./*": "./*"
+  },
+  "keywords": [
+    "vue2",
+    "vue3",
+    "micro-app"
+  ],
+  "author": "xmf",
+  "license": "MIT",
+  "dependencies": {
+    "@xigefish/components": "workspace: *",
+    "@xigefish/hooks": "workspace: *",
+    "@xigefish/d-render-shared": "workspace: *",
+    "@micro-zoe/micro-app": "0.8.11",
+    "vue": "^3",
+    "vue-router": "^4"
+  }
+}

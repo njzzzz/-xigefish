@@ -1,0 +1,61 @@
+@elNamespace: el;
+// [2023-01-10]替换为css变量
+@primary: var(~'--@{elNamespace}-color-primary');
+@success: var(~'--@{elNamespace}-color-success');
+@danger: var(~'--@{elNamespace}-color-danger');
+@warning: var(~'--@{elNamespace}-color-warning');
+
+@visited: var(--cip-color-visited, rgb(119, 28, 170));
+
+@info: var(--cip-color-info,  #999);
+:root{
+  --cip-main-bg: var(--cip-bg, #F5F5F5);
+  --@{elNamespace}-border-radius-base: 2px;
+}
+@background: var(--cip-main-bg);
+@tableHeadColor: var(--cip-table-head-color, #FAFAFA);
+@tableHeadFontWeight: var(--cip-table-head-font-weight, 600);
+@formItemLineHeight: var(--cip-form-item-line-height, 32px);
+
+// [2023-08-15] 修改命名规范，使用短横线连接
+@bg_color: var(~"--@{elNamespace}-bg-color");
+@bg_color_overlay: var(~"--@{elNamespace}-bg-color-overlay");
+@border_color: var(~"--@{elNamespace}-border-color");
+@border_color_light: var(~"--@{elNamespace}-border-color-light");
+@border_color_darker: var(~"--@{elNamespace}-border-color-darker");
+@text_color_primary: var(~"--@{elNamespace}-text-color-primary");
+@text_color_regular: var(~"--@{elNamespace}-text-color-regular");
+@text_color_secondary: var(~"--@{elNamespace}-text-color-secondary");
+@text_color_disabled: var(~"--@{elNamespace}-text-color-disabled");
+@text_color_placeholder: var(~"--@{elNamespace}-text-color-placeholder");
+@overlay_color: var(~"--@{elNamespace}-overlay-color");
+@fill_color: var(~"--@{elNamespace}-fill-color");
+@fill_color_light: var(~"--@{elNamespace}-fill-color-light");
+// [2022-07-24] 去除以下less变量
+//@front-limit-width: 1200px;
+//@navHeight: 65px;
+//@navActive: #68c7ec;
+//@navActiveBg: #0f5198;
+//@platformBackground: #13304c;
+//@tabsHeight: 42px;
+
+
+//@theme: #1e3851;
+
+//@menuBackground:  #1e3851;
+//@subMenuOpened: #253f58;
+//@menuItemActive: #104682;
+
+
+//@a4Width: 595.28;
+//@a4Height: 841.89;
+
+
+//// webpack [2022-06-02]: 去除此部分导出
+//:export {
+//  background: @menuBackground;
+//  textColor: #fff;
+//  activeTextColor: #fff;
+//  a4Width: @a4Width;
+//  a4Height: @a4Height;
+//}

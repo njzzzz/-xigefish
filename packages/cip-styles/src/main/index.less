@@ -1,0 +1,14 @@
+@import './menu-theme-mixin.less';
+@import './framework/index';
+@import './cip-main-breadcrumb';
+@import './cip-main-nav';
+@import './cip-main-tabs';
+@import './header-bar';
+@import './header-plugins';
+@import './theme';
+@import './page-breadcrumb';
+
+:root{
+  --@{elNamespace}-menu-item-height: 40px;
+  --@{elNamespace}-menu-sub-item-height: var(~'--@{elNamespace}-menu-item-height');
+}

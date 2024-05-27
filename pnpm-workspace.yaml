@@ -1,0 +1,6 @@
+packages:
+  - "packages/**"
+  - "play"
+  - "micro-app/*"
+  # - "d-render-core"
+  # - "d-render-core/packages/**"

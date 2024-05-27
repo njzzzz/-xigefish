@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "strict": false,
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
+    "paths": {
+      "@xigefish/components/*": ["./packages/cip-components/src/*"],
+      "@xigefish/build/*": ["./packages/cip-build/src/*"],
+      "@xigefish/hooks/*": ["./packages/cip-hooks/src/*"],
+      "@xigefish/plugins/*": ["./packages/cip-plugins/src/*"],
+      "@xigefish/request/*": ["./packages/cip-request/src/*"],
+      "@xigefish/scripts/*": ["./packages/cip-scripts/src/*"],
+      "@xigefish/styles/*": ["./packages/cip-styles/src/*"],
+      "@xigefish/d-render-shared/*": ["./packages/cip-utils/src/*"]
+    }
+  }
+}

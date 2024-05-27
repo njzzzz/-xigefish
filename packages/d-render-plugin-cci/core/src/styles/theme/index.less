@@ -1,0 +1,85 @@
+@import "./variate";
+.cip-primary-color{
+  color: @primary;
+  &.hover{
+    &:focus{
+      color: @primary;
+    }
+    &:hover{
+      //color: hardlight(@primary,#ccc);
+      color: var(~'--@{elNamespace}-color-primary-light-3');
+    }
+
+  }
+}
+.cip-success-color{
+  color: @success;
+  &.hover{
+    &:focus{
+      color: @success;
+    }
+    &:hover{
+      //filter: contrast(50)
+      color: var(~'--@{elNamespace}-color-success-light-3');
+      //color: hardlight(@success,#ccc);
+    }
+
+  }
+}
+.cip-warning-color{
+  color: @warning;
+  &.hover{
+    &:focus{
+      color: @warning;
+    }
+    &:hover{
+      color: var('--@{elNamespace}-color-warning-light-3');
+      //color: hardlight(@warning,#ccc);
+    }
+
+  }
+}
+.cip-visited-color{
+  color: @visited;
+  &.hover{
+    &:focus{
+      color: @visited;
+    }
+    &:hover{
+      //color: hardlight(@visited,#ccc);
+    }
+
+  }
+}
+.cip-info-color{
+  color: #8c939d;
+}
+.cip-danger-color{
+  color: @danger;
+  &.hover{
+    &:focus{
+      color: @danger;
+    }
+    &:hover{
+      //color: hardlight(@danger,#ccc);
+    }
+  }
+}
+
+.empty-form--text{
+  position: absolute;
+  left: 0;
+  right:0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  z-index: 1;
+}
+// 去除chrome默认的选中样式导致outline边框问题
+:focus {
+  outline: none;
+}
+

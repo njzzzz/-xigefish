@@ -1,0 +1,76 @@
+.cip-calendar {
+  max-width: 1096px;
+  .current-month, .other-month, .current-month-week {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .day-title {
+      flex-shrink: 0;
+      height: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: left;
+      line-height: 20px;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+    }
+    .day-detail {
+      overflow: hidden;
+    }
+  }
+
+  .actived, .actived-sat, .actived-sun {
+    position: absolute;
+    z-index: 1;
+    height: 126px;
+    border: 2px solid @primary;// var(~'--@{elNamespace}-color-primary');
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.10);
+  }
+
+  .actived {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 233px;
+  }
+
+  .actived-sat {
+    right: 0;
+    width: 191px;
+  }
+
+  .actived-sun {
+    left: 0;
+    width: 191px;
+  }
+
+  .current-month {
+    color: @text_color_primary; //#333333;
+    background-color: var(--el-color-primary-light-9); // #EBF4FF;
+  }
+
+  .current-month-week {
+    color: @text_color_primary; //#333333;
+    background-color:  var(--el-color-danger-light-9);//#FFEEF0; //TODO: 寻找相关的变量
+  }
+
+  .other-month {
+    color: @text_color_disabled; // var(~'--@{elNamespace}-text-color-disabled');
+  }
+
+
+  .calendar__header--right {
+    display: flex;
+    align-items: center;
+    .year-select, .month-select{
+      width: 100px;
+    }
+    .month-select {
+      margin-left: 12px;
+    }
+  }
+}

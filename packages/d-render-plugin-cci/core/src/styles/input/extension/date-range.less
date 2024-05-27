@@ -1,0 +1,61 @@
+.cip-date-scope{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  &.is-separate{
+    .cip-date-scope__link{
+      // is-success 将导致字体变色
+      color: var(~'--@{elNamespace}-input-text-color');
+      font-size: 16px;
+      zoom: 0.625;
+      margin: 0 4px;
+    }
+  }
+}
+// 教研错误时的颜色变化
+.@{elNamespace}-form-item.is-error .cip-date-scope:not(.is-separate){
+  box-shadow: 0 0 0 1px var(~'--@{elNamespace}-color-danger') inset;
+}
+
+.cip-date-scope:not(.is-separate){
+  padding: 0 1px;
+  box-shadow: 0 0 0 1px var(~'--@{elNamespace}-input-border-color',var(~'--@{elNamespace}-border-color')) inset;
+  border-radius: var(~'--@{elNamespace}-input-border-radius',var(~'--@{elNamespace}-border-radius-base'));
+  &:hover{
+    box-shadow: 0 0 0 1px var(~'--@{elNamespace}-input-hover-border-color',var(~'--@{elNamespace}-border-color-hover')) inset;
+  }
+  &.is-focus{
+    box-shadow: 0 0 0 1px @primary inset;
+  }
+  .cip-date-range.cip-form-picker{
+    line-height: calc(var(~'--@{elNamespace}-component-size') - 2px);
+    height: calc(var(~'--@{elNamespace}-input-height',var(~'--@{elNamespace}-component-size')) - 2px);
+    flex-grow: 2;
+    flex-basis: 0;
+    display: flex;
+    .@{elNamespace}-input__wrapper{
+      height: calc(var(--el-input-height,var(--el-component-size)) - 2px);
+      box-shadow: none;
+      padding-top: 0;
+      padding-bottom: 0;
+      .@{elNamespace}-input__inner{
+        text-align: center;
+      }
+    }
+  }
+  .cip-date-scope__link{
+    // is-success 将导致字体变色
+    color: var(~'--@{elNamespace}-input-text-color');
+    font-size: 16px;
+    zoom: 0.625;
+    margin: 0 4px;
+  }
+  .@{elNamespace}-date-editor.@{elNamespace}-input{
+    width: 100%;
+    flex-shrink: 1;
+  }
+
+  .@{elNamespace}-input__suffix{
+    right: 0;
+  }
+}

@@ -1,0 +1,59 @@
+@import '../theme/variate.less';
+
+.cip-select-table{
+  display: flex;
+  width: 100%;
+  &__table{
+    flex-grow: 2;
+    &.page-layout-list{
+      --horizontal-padding: 0;
+    }
+    //.cip-page-layout-list__content{
+    //  padding-top: 0 !important; // 覆盖默认的16px
+    //}
+
+  }
+  &--row{
+    .cip-select-table__divider{
+      margin: 0 16px;
+    }
+
+  }
+  &--row-reverse{
+    .cip-select-table__divider{
+      margin: 0 16px;
+    }
+  }
+  &--column{
+    .cip-select-table__divider{
+      margin-bottom: 16px;
+    }
+  }
+  &--column-reverse{
+    .cip-select-table__divider{
+      margin-top: 16px;
+    }
+  }
+  &__divider{
+    border-top: 1px dashed @border_color; //var(~'--@{elNamespace}-border-color');
+    border-right: 1px dashed @border_color; //var(~'--@{elNamespace}-border-color');
+  }
+  .cip-select-table__divider.without-divider{
+    border: none;
+  }
+  &__tags{
+    background: @bg_color; //var(~'--@{elNamespace}-color-white');
+    border: 1px solid var(~'--@{elNamespace}-border-color');
+    max-height: 50vh;
+    padding: 12px;
+    overflow: auto;
+    &.limited-height{
+      max-height: 200px;
+      overflow: auto;
+    }
+    .cip-select-table__tag{
+      margin: 4px;
+    }
+  }
+}
+

@@ -1,0 +1,32 @@
+.basic-select-tree {
+  width: 100%;
+}
+
+.basic-select-tree-popper {
+  .@{elNamespace}-scrollbar .@{elNamespace}-scrollbar__view .@{elNamespace}-select-dropdown__item {
+    height: auto;
+    max-height: 274px;
+    padding: 0;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  .@{elNamespace}-select-dropdown__item.selected {
+    font-weight: normal;
+  }
+
+  .@{elNamespace}-tree-node__label {
+    font-weight: normal;
+  }
+}
+
+.select-tree-option {
+  .@{elNamespace}-tree-node__content {
+    height: 32px;
+    padding: 0 20px;
+  }
+
+  .is-current > .@{elNamespace}-tree-node__content .@{elNamespace}-tree-node__label {
+    color: #409EFF;
+  }
+}

@@ -1,0 +1,15 @@
+.dynamic-image {
+  &__img__wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+  &__img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+}

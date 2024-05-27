@@ -1,0 +1,161 @@
+html,body{
+  margin:0;
+  padding: 0;
+  height: 100%;
+  color: #333;
+}
+#subapp {
+  //font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,miui,Hiragino Sans GB,Microsoft Yahei,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  height: 100%;
+}
+// 为了处理数据中台引入页面时的padding问题
+.main-framework--top__main__limit{
+  .manager-page-padding{
+    overflow: visible;
+  }
+}
+.manager-page-padding{
+  padding: 20px;
+  overflow: auto;
+  .manager-page-padding{
+    padding: 0;
+  }
+}
+
+.el-popper{
+  max-width: 80%;
+}
+
+.is-disabled{
+  &.hover{
+    &:hover{
+      color: #C0C4CC;
+    }
+  }
+}
+
+.el-drawer__body{
+  background: @background;
+}
+// 输入框使用继承的字体
+textarea {
+  font-family: inherit
+}
+
+/* 滚动条 */
+::-webkit-scrollbar{
+  width: 6px;
+  height: 6px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  box-shadow: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.font-bold{
+  font-weight: bold;
+}
+
+
+.CodeMirror{
+  * {
+    font-family:  Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+}
+
+.cip-drawer__container{
+  .el-drawer{
+    //top: 64px;
+    //height: calc(100% - 64px - 20px);
+    //bottom: 20px;
+  }
+}
+
+.cip-main-framework.main-theme--supergravity{
+  background-image: url('@/assets/images/background/left.png'),url('@/assets/images/background/logo.png'),url("@/assets/images/background/main.png");
+  background-attachment: fixed;
+  background-size: 720px 254px, 390px 254px, 100% 100%;
+  background-position: left bottom, top right,center;
+  background-repeat: no-repeat;
+  .cip-scroll-panel--horizontal .cip-scroll-panel---arrows{
+    background-image: url('@/assets/images/background/logo.png'),url("@/assets/images/background/main.png");
+    background-attachment: fixed;
+    background-size:  390px 254px, 100% 100%;
+    background-position:  top right,center;
+    background-repeat: no-repeat,no-repeat;
+  }
+}
+
+html.dark{
+  --ep-color-primary: #3786fd;
+  --el-color-primary: #3786fd;
+  #subapp{
+    color: var(--el-text-color-regular);
+  }
+  .cip-main-framework.main-theme--supergravity{
+    background-image: url('@/assets/images/background/logo.png');
+    background-attachment: fixed;
+    background-size:  390px 254px;
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-color:var(--el-bg-color-overlay);
+    .cip-scroll-panel--horizontal .cip-scroll-panel---arrows{
+      background-image: url('@/assets/images/background/logo.png');
+      background-attachment: fixed;
+      background-size:  390px 254px;
+      background-position:  top right;
+      background-repeat: no-repeat;
+      background-color: var(--ep-bg-color-overlay);
+    }
+  }
+  .markdown-wrapper, .markdown-body{
+    background: var(--el-bg-color);
+    color: var(--el-text-color-regular);
+    pre{
+      background: var(--el-bg-color-page);
+    }
+  }
+
+  .basic-classify-layout__item{
+    background: var(--el-bg-color);
+  }
+
+  /* 滚动条 */
+  ::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+  }
+  /* 滚动槽 */
+  ::-webkit-scrollbar-track {
+    box-shadow: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+  }
+  /* 滚动条滑块 */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: rgba(255, 255, 255, 0.5);
+  }
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: var(--el-scrollbar-bg-color,var(--el-text-color-secondary));
+  }
+
+}
+

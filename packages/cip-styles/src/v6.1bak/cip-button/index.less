@@ -1,0 +1,25 @@
+// el-button 按钮点击后focus状态不变问题处理
+.cip-button{
+  // 支持方形按钮 【注：优先级低于于circle, 与round一起使用将导致按钮变为circle】
+  &&--square{
+    width: var(~'--@{elNamespace}-button-size', var(~'--@{elNamespace}-component-size'));
+    padding: 0;
+  }
+  // 地图模式的按钮
+  &&--map{
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+    border-color: transparent !important; // map按钮不允许存在边框颜色
+    &.is-disabled{
+      background: @bg_color; //var(~'--@{elNamespace}-color-white');
+    }
+    &:not(.is-disabled){
+      &:hover{
+        color: @text_color_primary; //var(~'--@{elNamespace}-text-color-primary');
+      }
+      &:active{
+        background: @bg_color;
+        color: @primary; //var(~'--@{elNamespace}-color-primary');
+      }
+    }
+  }
+}

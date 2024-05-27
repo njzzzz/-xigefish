@@ -1,0 +1,71 @@
+
+
+.basic-number--left.@{elNamespace}-input-number {
+  height: 32px;
+  .@{elNamespace}-input__inner {
+    text-align: left;
+  }
+}
+
+.@{elNamespace}-input-number {
+  .@{elNamespace}-input {
+    .@{elNamespace}-input__wrapper {
+      padding: 1px 12px;
+    }
+  }
+
+  &.basic-number--left {
+    height: 32px;
+    .@{elNamespace}-input__inner {
+      text-align: left;
+    }
+  }
+  &.basic-number--unit {
+    position: relative;
+    .@{elNamespace}-input__inner {
+      text-align: left;
+      padding-right: 24px;
+    }
+    &::after {
+      content: attr(data-unit);
+      position: absolute;
+      right: 4px;
+      top: 2px;
+      height: @formItemLineHeight;
+      color: @info;
+    }
+  }
+
+  &.basic-number-standard {
+    .@{elNamespace}-input-number__decrease {
+      left: auto;
+      right: 32px;
+      // 按钮30px+右边框1px+左边竖线1px
+      background: inherit;
+      border: none;
+    }
+    .@{elNamespace}-input-number__increase {
+      background: inherit;
+      border: none;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        bottom: 8px;
+        width: 1px;
+        background: var(--el-border-color);
+      }
+    }
+    .@{elNamespace}-input__inner {
+      // 61px = 右侧两个按钮2*30+中间竖线1px，15px为默认的左边间距
+    }
+    &.@{elNamespace}-input-number--large {
+      .@{elNamespace}-input-number__decrease {
+        right: 40px;
+        // 按钮38px+右边框1px+左边竖线1px
+      }
+    }
+  }
+}
+

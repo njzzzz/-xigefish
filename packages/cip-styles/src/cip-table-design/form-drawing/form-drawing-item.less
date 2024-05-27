@@ -1,0 +1,57 @@
+@import '../../theme/variate.less';
+.cip-td-dynamic-form-design {
+  .cip-td-form-drawing-table {
+    .form-drawing-item{
+      user-select: none;
+      position: relative;
+      background-color: rgba(236,245,255,.3);
+      border: 1px dashed #999;
+      margin: 4px 2px;
+      &.is-active{
+        .form-drawing-item__handle{
+          border: 1px solid @primary;
+          outline: 2px solid @primary;
+        }
+        .show-focus{
+          visibility: visible;
+        }
+        .handle-icon{
+          padding: 4px;
+          color: #fff;
+          background-color: @primary;
+        }
+      }
+      .show-focus{
+        visibility: hidden;
+      }
+      &__handle{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+        .handle-icon{
+          cursor: pointer;
+        }
+        .move-icon{
+          cursor: move;
+        }
+        .item-field-key{
+          color: @success;
+          font-size: 12px;
+        }
+        .right-top{
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .right-bottom{
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}

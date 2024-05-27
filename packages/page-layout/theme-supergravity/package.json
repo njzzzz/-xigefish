@@ -1,0 +1,42 @@
+{
+  "name": "@xigefish/page-layout-theme-supergravity",
+  "version": "1.1.3",
+  "description": "页面内容布局",
+  "main": "./esm/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports": {
+    ".": {
+      "import": "./esm/main.js"
+    },
+    "./*": {
+      "import": "./*"
+    },
+    "./style": {
+      "import": "./dist/index.css"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": " https://git.citycloud.com.cn:3000/cip/cip-plus.git",
+    "directory": "packages/page-layout-theme-supergravity"
+  },
+  "dependencies": {
+    "@xigefish/components": "workspace: *",
+    "@xigefish/hooks": "workspace: *",
+    "@xigefish/d-render-shared": "workspace: *",
+    "@xigefish/page-layout-shared": "workspace: *",
+    "@xigefish/config": "workspace: *",
+    "@xigefish/d-render-shared": "workspace: *",
+    "element-plus": ">= 2.2.22",
+    "vue": ">=3.2"
+  },
+  "keywords": [
+    "page",
+    "layout",
+    "vue3"
+  ],
+  "author": "xmf",
+  "license": "ISC"
+}

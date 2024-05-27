@@ -1,0 +1,13 @@
+.main-framework--hide{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  &__tabs{
+    // hide 模式允许展示页签
+    flex-shrink: 0;
+  }
+  &__main{
+    flex-grow: 2;
+    height: 0;
+  }
+}

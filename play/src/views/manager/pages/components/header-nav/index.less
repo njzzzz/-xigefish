@@ -1,0 +1,39 @@
+.header-nav__example__mask-container {
+  .main-theme--standard {
+    > :not(header) {
+      display: none;
+    }
+
+    .main-framework__name {
+      height: var(--main-framework-header-height, 52px);
+
+      img {
+        width: 38px;
+        height: 38px;
+        margin: 0 10px 0 8px;
+      }
+    }
+
+    .main-framework__header {
+      min-width: auto;
+
+      .main-framework--top__header {
+        width: auto;
+      }
+
+      .header-bar {
+        flex-shrink: 0;
+
+        .example__header-bar__plugins {
+          > i, .el-badge {
+            margin-right: 20px;
+          }
+        }
+        .account-name {
+          height: var(--main-framework-header-height, 52px);
+          line-height: var(--main-framework-header-height, 52px);
+        }
+      }
+    }
+  }
+}

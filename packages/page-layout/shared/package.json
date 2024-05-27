@@ -1,0 +1,23 @@
+{
+  "name": "@xigefish/page-layout-shared",
+  "version": "1.0.7",
+  "description": "页面内容布局",
+  "main": "./esm/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": " https://git.citycloud.com.cn:3000/cip/cip-plus.git"
+  },
+  "keywords": [
+    "page",
+    "layout",
+    "vue3"
+  ],
+  "dependencies": {
+    "vue": ">=3.2"
+  },
+  "author": "xmf",
+  "license": "ISC"
+}

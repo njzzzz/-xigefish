@@ -1,0 +1,27 @@
+.page-layout-left-right--standard{
+  display: flex;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  .page-layout-left-right{
+    &__left{
+      padding-top: 12px;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 304px;
+      height: 100%;
+      overflow: auto;
+      background: #fff;
+    }
+    &__right{
+      flex-grow: 1;
+      background: #fff;
+      width: 0;
+      overflow: auto;
+      padding: 0 20px;
+    }
+    &__divider{
+      border-right: 1px solid var(~'--@{elNamespace}-border-color')
+    }
+  }
+}

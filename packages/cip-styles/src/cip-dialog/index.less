@@ -1,0 +1,88 @@
+.cip-dialog__wrapper{
+  &.@{elNamespace}-dialog{
+    --@{elNamespace}-dialog-padding-primary: 14px;
+    .@{elNamespace}-dialog__header{
+      box-sizing: border-box;
+      margin: unset; // element-plus 默认有个margin-right: 16px;
+      padding-bottom: var(~'--@{elNamespace}-dialog-padding-primary'); // element-plus 默认有个margin-bottom: 10px;
+      border-bottom: 1px solid var(~'--@{elNamespace}-border-color-light');
+      line-height: 24px;
+      display: flex;
+      align-items: center;
+      .@{elNamespace}-dialog__mainTitle {
+        margin-right: 20px;
+        font-weight: 500;
+      }
+      .@{elNamespace}-dialog__subTitle {
+        font-size: 14px;
+        font-weight: 400;
+        color: @text_color_regular; //var(~'--@{elNamespace}-text-color-regular');;
+      }
+      .@{elNamespace}-dialog__headerbtn .@{elNamespace}-dialog__close {
+        color: var(~'--@{elNamespace}-text-color-secondary'); // 
+         //var(~'--@{elNamespace}-text-color-regular');;
+      }
+    }
+    .@{elNamespace}-dialog__body{
+      max-height: 60vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      //padding-bottom: 12px;
+      box-sizing: border-box;
+      padding: 24px 24px 8px; // 基本为使用表格的情况，表格会有16px的下外边距 [ui规范使用24px]
+    }
+    &.cip-dialog--show-only{
+      .@{elNamespace}-dialog__body{
+        padding-bottom: 24px;     // 只读弹窗的padding bottom 设置为24px
+      }
+    }
+    .@{elNamespace}-dialog__footer{
+      //border-top: 1px solid #ddd; [UI标准不需要这个线]
+      padding: 16px 24px;
+    }
+
+  }
+  &.is-fullscreen.@{elNamespace}-dialog{
+    .@{elNamespace}-dialog__body{
+      box-sizing: border-box;
+      height: calc(100% - 55px - 63px);
+      max-height: calc(100% - 55px - 63px); // header 55px footer 63px
+    }
+  }
+
+}
+.drawer-insert {
+  position: relative;
+}
+.cip-drawer{
+  &__container&__container--quirks{
+    position: absolute;
+  }
+  .@{elNamespace}-drawer__header{
+    font-weight: bold;
+    font-size: 18px;
+    color: var(~'--@{elNamespace}-text-color-primary');
+    margin-bottom: 12px;
+    padding: 24px 24px 16px;
+  }
+  .@{elNamespace}-drawer__body{
+    background: var(~'--@{elNamespace}-bg-color');
+    padding: 0 24px;
+  }
+  .@{elNamespace}-drawer__footer{
+    box-shadow: 0px -2px 12px 0px rgba(0,0,0,0.06);
+    height: 64px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+html.dark {
+  // 弹出框暗黑模式的特殊样式
+  .cip-dialog__wrapper {
+    border-radius: 0;
+    border: 1px solid var(~'--@{elNamespace}-border-color-light');
+    box-shadow: 0px 12px 48px 16px rgba(0,0,0,0.06), 0px 9px 28px 0px rgba(0,0,0,0.10), 0px 6px 16px -8px rgba(0,0,0,0.16); 
+  }
+}

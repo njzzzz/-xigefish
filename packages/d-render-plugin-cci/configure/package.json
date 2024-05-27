@@ -1,0 +1,51 @@
+{
+  "name": "@xigefish/d-render-plugin-cci-configure",
+  "version": "1.0.5",
+  "description": "cci用于d-render的设计器配置插件",
+  "module": "./esm/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "esm",
+    "types",
+    "dist",
+    "src"
+  ],
+  "exports": {
+    ".": "./esm/main.js",
+    "./esm/*": {
+      "import": "./esm/*",
+      "types": "./types/*.d.ts"
+    },
+    "./*.js": {
+      "import": "./esm/*.js",
+      "types": "./types/*.d.ts"
+    },
+    "./*": {
+      "import": [
+        "./esm/*.js",
+        "./esm/*/index.js",
+        "./esm/*"
+      ],
+      "types": "./types/*.d.ts"
+    }
+  },
+  "keywords": [
+    "@xigefish/d-render",
+    "plugin",
+    "input",
+    "layout",
+    "cci",
+    "configure"
+  ],
+  "dependencies": {
+    "@xigefish/d-render-plugin-cci": "workspace: *",
+    "@xigefish/d-render-shared": "workspace: *"
+  },
+  "author": "xmf",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

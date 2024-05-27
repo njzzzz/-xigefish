@@ -1,0 +1,61 @@
+{
+  "name": "@xigefish/utils",
+  "version": "6.0.3",
+  "description": "公共方法",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.citycloud.com.cn:3022/cip/cip-utils.git"
+  },
+  "keywords": [
+    "utils"
+  ],
+  "exports": {
+    "./*.js": {
+      "import": "./esm/*.js",
+      "types": [
+        "./types/*.d.ts",
+        "./types/*/index.d.ts"
+      ]
+    },
+    "./*": {
+      "import": [
+        "./esm/*.js",
+        "./esm/*/index.js",
+        "./esm/*"
+      ],
+      "types": [
+        "./types/*.d.ts",
+        "./types/*/index.d.ts"
+      ]
+    },
+    "./esm/*": {
+      "import": [
+        "./esm/*.js",
+        "./esm/*/index.js",
+        "./esm/*"
+      ],
+      "types": [
+        "./types/*.d.ts",
+        "./types/*/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "src",
+    "esm",
+    "types"
+  ],
+  "author": "xmf",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/qs": "6.x"
+  },
+  "dependencies": {
+    "vue-router": "^4.2.5",
+    "@ctrl/tinycolor": "3.4.x",
+    "@xigefish/d-render-shared": "workspace:*",
+    "lodash-es": "4.17.x",
+    "qs": "6.x",
+    "uuid": ">= 8.3.x"
+  }
+}

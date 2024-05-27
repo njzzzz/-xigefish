@@ -1,0 +1,113 @@
+.main-framework--left-2{
+  @footerHeight: var(--cip-main-frame-left-2-footer-height, var(--cip-main-frame-footer-height, 52px));
+  @sideWidth: 256px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  //display: flex;
+  &__xx{
+    height: calc(100% - var(--main-framework-header-height, 52px));
+    display: flex;
+  }
+  &__aside{
+    width: @sideWidth;
+    flex-shrink: 0;
+    height: 100%;
+    transition: width 0.2s;
+    &.is-collapse{
+      width: 64px; // el-menu collapse的宽度
+    }
+    &__nav{
+      padding-top: 16px;
+      box-sizing: border-box;
+      height: calc(100%  - @footerHeight);
+      &.is-expanded {
+        padding: 16px 0;
+        height: 100%;
+      }
+    }
+    &__switch{
+      height: @footerHeight;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fold-icon{
+      //color: #fff;
+      font-size: var(--cip-main-fold-icon-size, 20px);
+      line-height: 1em;
+      cursor: pointer;
+      padding: var(--cip-main-fold-icon-padding);
+      background: var(--cip-main-fold-icon-bg);
+      margin: var(--cip-main-fold-icon-margin);
+      border-radius: var(--cip-main-fold-icon-border-radius);
+    }
+  }
+  &__name{
+    width: @sideWidth;
+    height: var(--main-framework-header-height, 52px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    position: relative;
+    z-index:1;
+    flex-shrink: 0;
+    &.is-collapse{
+      padding: 0 8px;
+      justify-content: center;
+      overflow: hidden;
+      width: 64px; // el-menu collapse的宽度
+    }
+  }
+  &__header{
+    height: var(--main-framework-header-height, 52px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 200;
+  }
+  &__main{
+    width: 100%;
+    height: 0;
+    flex-grow: 2;
+    box-sizing: border-box;
+    //padding-top: 22px;
+    overflow: auto;
+  }
+  &__tabs{
+    flex-shrink: 0;
+    padding: 0;
+    //height: 52px;
+    box-sizing: border-box;
+  }
+  &__breadcrumb{
+    height: 42px;
+    display: flex;
+    align-items: center;
+  }
+  //&__breadcrumb{
+  //  position: absolute;
+  //  top: var(--main-framework-header-height, 52px);
+  //  left: 0;
+  //  right:0;
+  //  background: #fff;
+  //  z-index: 9;
+  //}
+  &__footer{
+    height: @footerHeight;
+  }
+  &__content{
+    position: relative;
+    flex-grow: 2;
+    width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}

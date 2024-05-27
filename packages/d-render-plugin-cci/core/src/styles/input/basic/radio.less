@@ -1,0 +1,13 @@
+.cip-basic-radio{
+  .@{elNamespace}-radio, .@{elNamespace}-radio-group{
+    //line-height: inherit; // el-form-item__content align-items: center 部分取消导致raido输入整体偏上
+    line-height: 32px;
+  }
+  &.@{elNamespace}-radio-group {
+    display: block;
+  }
+  // block 将导致radio高度为40px，与设计的32px不符合
+  //&.@{elNamespace}-radio-group {
+  //  display: block;
+  //}
+}

@@ -1,0 +1,41 @@
+@import '../theme/variate.less';
+
+.cip-search-input{
+  width: 656px;
+  height: 42px;
+  display: inline-flex;
+  &__wrapper{
+    display: flex;
+    align-items: center;
+  }
+  &__input{
+    flex-grow: 2;
+    background:none;
+    outline:none;
+    border:2px solid @border_color;
+    border-right: none;
+    border-top-left-radius:4px;
+    border-bottom-left-radius:4px;
+    padding-left:20px;
+    color: rgb(34,34,34);
+    font-size: 16px;
+    font-weight: bold;
+    &:focus{
+      border-color: @primary;
+    }
+  }
+  &__button{
+    flex-shrink: 0;
+    width: 108px;
+    border-top-left-radius:0 !important;
+    border-bottom-left-radius:0 !important;
+    font-size: 16px;
+    font-weight: bold;
+    height: 100%;
+  }
+  .@{elNamespace}-button--primary{
+    background: @primary;
+    border: @primary;
+  }
+}
+

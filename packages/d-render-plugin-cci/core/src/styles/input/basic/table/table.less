@@ -1,0 +1,35 @@
+
+.basic-table__add{
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  border: 1px dashed var(--el-border-color);
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.@{elNamespace}-form-item.is-error{
+  .basic-table{
+    outline: 1px solid @danger;
+  }
+}
+.basic-table{
+  overflow: hidden;
+  width: 0;
+  flex-grow: 2;
+  line-height: normal;
+  .handler-size{
+    font-size: 16px;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+  .create-handle{
+    font-size: 24px;
+  }
+}
+
+

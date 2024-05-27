@@ -1,0 +1,21 @@
+@import '../theme/variate.less';
+
+.cip-tabs{
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+}
+.cip-tab{
+  cursor: pointer;
+  padding-bottom: 6px;
+  border-bottom: 3px solid transparent;
+  color: @text_color_regular;
+  &+&{
+    margin-left: 32px;
+  }
+  &.is-active{
+    @active-color: @primary;
+    color: @active-color;
+    border-bottom-color: @active-color;
+  }
+}

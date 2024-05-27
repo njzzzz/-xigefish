@@ -1,0 +1,12 @@
+{
+  "name": "@xigefish/d-render-plugin-chat",
+  "version": "1.0.2",
+  "description": "chat plugin with design configure for @xigefish/d-render",
+  "main": "./esm/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,47 @@
+@elNamespace: el;
+// [2023-01-10]替换为css变量
+@primary: var(--ep-color-primary, var(--el-color-primary)); //var(~'--@{elNamespace}-color-primary');
+@success: var(--ep-color-success, var(--el-color-success)); //var(~'--@{elNamespace}-color-success');
+@danger: var(--ep-color-danger, var(--el-color-danger)); //var(~'--@{elNamespace}-color-danger');
+@warning: var(--ep-color-warning, var(--el-color-warning)); // var(~'--@{elNamespace}-color-warning');
+
+@visited: var(--cip-color-visited, rgb(119, 28, 170));
+
+@info: var(--cip-color-info,  #999);
+:root{
+  --cip-main-bg: var(--cip-bg, #F5F5F5);
+}
+@background: var(--cip-main-bg);
+@tableHeadColor: var(--cip-table-head-color, #FAFAFA);
+@tableHeadFontWeight: var(--cip-table-head-font-weight, 600);
+@formItemLineHeight: var(--cip-form-item-line-height, 32px);
+
+
+// [2022-07-24] 去除以下less变量
+//@front-limit-width: 1200px;
+//@navHeight: 65px;
+//@navActive: #68c7ec;
+//@navActiveBg: #0f5198;
+//@platformBackground: #13304c;
+//@tabsHeight: 42px;
+
+
+//@theme: #1e3851;
+
+//@menuBackground:  #1e3851;
+//@subMenuOpened: #253f58;
+//@menuItemActive: #104682;
+
+
+//@a4Width: 595.28;
+//@a4Height: 841.89;
+
+
+//// webpack [2022-06-02]: 去除此部分导出
+//:export {
+//  background: @menuBackground;
+//  textColor: #fff;
+//  activeTextColor: #fff;
+//  a4Width: @a4Width;
+//  a4Height: @a4Height;
+//}

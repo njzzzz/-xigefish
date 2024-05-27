@@ -1,0 +1,47 @@
+.cip-check-tags-wrapper{
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  height: 28px;
+  box-sizing: border-box;
+  min-width: 60px;
+  line-height: 28px;
+  border: 1px solid #fff;
+  text-align: center;
+  padding-bottom: 5px;
+  font-size: 14px;
+  &.is-checked {
+    color: @primary; //var(~'--@{elNamespace}-color-primary');
+    background: rgba(55,134,253,0.10);
+    border: 1px solid @primary;
+    border-radius: 2px;
+  }
+}
+.cip-input-tags-wrapper {
+  display: flex;
+  height: auto;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  &--items {
+    display: flex;
+    width: 100%;
+    max-height: 30px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    row-gap: 5px;
+    column-gap: 10px;
+    transition: max-height .3s ease;
+    &>div {
+      padding: 0 5px;
+    }
+  }
+  .checked{
+    max-height: 300px;
+    transition: max-height .3s ease;
+  }
+  .toggle-icon {
+    cursor: pointer;
+  }
+}

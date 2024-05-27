@@ -1,0 +1,247 @@
+/**
+@bg: 菜单整体背景色
+@color: 未激活时字体颜色
+@activeColor: 激活时颜色
+@subMenuOpenedBg: 子菜单展开式颜色
+ */
+
+
+
+.menu-theme{
+  @bg: var(--cip-menu-bg);
+  @color: var(--cip-menu-color);
+  @activeBg: var(--cip-menu-active-bg);
+  @activeColor: var(--cip-menu-active-color);
+  @subMenuOpenedBg: var(--cip-menu-opened-bg);
+  .normal-menu-item-mix(){
+    margin: var(--cip-menu-margin);
+    border-radius: var(--cip-menu-border-radius);
+    border-width: var(--cip-menu-border-width, 0 0 0 5px);
+    border-style: solid;
+    border-color: transparent;
+    color: @color;
+  }
+  .active-sub-menu-mix(){
+    color: var(--cip-main-sub-menu-opened-title-color);
+  }
+  .active-menu-item-mix(){
+    border-color: var(--cip-menu-active-border-color, transparent transparent transparent @activeColor) !important;
+    background: @activeBg !important;
+    color: @activeColor !important;
+  }
+  .hover-menu-item-mix(){
+    color: var(--cip-menu-hover-color, @activeColor) !important;
+    background: var(--cip-menu-hover-bg, transparent) !important;
+  }
+  .active-collapse-menu-item-mix(){
+    border-color: var(--cip-menu-active-border-color, transparent transparent transparent @activeColor) !important;
+    background: var(--cip-menu-collapse-active-bg, @activeBg) !important;
+    color: var(--cip-menu-collapse-active-color, @activeColor) !important;
+    box-shadow: var(--cip-menu-collapse-box-shadow) !important;
+  }
+
+  .@{elNamespace}-menu{
+    background: @bg;
+    // 普通状态的item激活 和 hover 逻辑
+    .@{elNamespace}-menu-item{
+      .normal-menu-item-mix();
+      &:hover{
+        .hover-menu-item-mix();
+      }
+      // is-active的样式需要覆盖hover的样式
+      &.is-active{
+        .active-menu-item-mix();
+        .cip-svg-icon {
+          background-color: #fff;
+          border-radius: 50%;
+        }
+      }
+      .cip-svg-icon {
+        padding: 1px;
+      }
+    }
+    // 普通状态的subMenu的处理
+    .@{elNamespace}-sub-menu{
+      // title类似item的处理
+      .@{elNamespace}-sub-menu__title{
+        .normal-menu-item-mix();
+        &:hover{
+          .hover-menu-item-mix();
+        }
+      }
+      &.is-opened{
+        // 控制已打开的sub-menu的背景色
+        .@{elNamespace}-menu{
+          background: @subMenuOpenedBg;
+        }
+      }
+      &.is-active{
+        > .@{elNamespace}-sub-menu__title{
+          .active-sub-menu-mix();
+        }
+      }
+    }
+  }
+  // collapse状态的样式 [注此处与menu平级]
+  .@{elNamespace}-menu.@{elNamespace}-menu--collapse{
+    .@{elNamespace}-sub-menu.is-active{
+      .@{elNamespace}-sub-menu__title{
+        .active-collapse-menu-item-mix();
+      }
+    }
+    .@{elNamespace}-menu-item.is-active{
+      .active-collapse-menu-item-mix();
+      .cip-svg-icon {
+        background-color: transparent!important;
+        border-radius: 0;
+      }
+    }
+  }
+
+
+
+}
+// 弹出部分样式修改
+.menu-theme--popup{
+  @bg: var(--cip-menu-bg);
+  @color: var(--cip-menu-color);
+  @activeBg: var(--cip-menu-active-bg);
+  @activeColor: var(--cip-menu-active-color);
+  @subMenuOpenedBg: var(--cip-menu-opened-bg);
+  .normal-menu-item-mix(){
+    border-left: 5px solid transparent;
+    background-color: @bg;
+    color: @color;
+  }
+  .active-menu-item-mix(){
+    border-left-color: @activeColor !important;
+    background: @activeBg !important;
+    color: @activeColor !important;
+  }
+  .hover-menu-item-mix(){
+    color: @color !important;
+    background: @activeBg !important;
+  }
+  .@{elNamespace}-menu--popup-container.cip-menu-popper{
+    .@{elNamespace}-menu.@{elNamespace}-menu--popup{
+      background-color: @bg;
+    }
+    .@{elNamespace}-menu-item{
+      .normal-menu-item-mix();
+      &:hover{
+        .hover-menu-item-mix();
+      }
+      &.is-active{
+        .active-menu-item-mix();
+      }
+    }
+    .@{elNamespace}-sub-menu{
+      .@{elNamespace}-sub-menu__title{
+        .normal-menu-item-mix();
+      }
+      &.is-active{
+        > .@{elNamespace}-sub-menu__title{
+          .hover-menu-item-mix();
+          color: @activeColor !important;
+        }
+      }
+    }
+  }
+  .@{elNamespace}-menu--horizontal.@{elNamespace}-menu--popup-container.cip-menu-popper{
+    .@{elNamespace}-menu-item{
+      border: none !important;
+    }
+  }
+}
+
+.menu-theme--horizontal{
+  @bg: var(--cip-menu-bg);
+  @color: var(--cip-menu-color);
+  @activeBg: var(--cip-menu-active-bg);
+  @activeColor: var(--cip-menu-active-color);
+  @defaultColor: @color;
+  position: relative;
+  overflow: hidden;
+  /**内部混入定义**/
+  // 激活菜单项
+  .menu-item-active(){
+    background: @activeBg !important;
+    color: @activeColor !important;
+    font-weight: bold !important;
+  }
+  .menu-item-focus(){
+    color: @defaultColor !important;
+    background: @bg !important;
+  }
+  .menu-item-hover(){
+    font-weight: var(--cip-menu-hover-font-weight) !important;
+    color: var(--cip-menu-hover-color, @activeColor) !important;
+    background: var(--cip-menu-hover-bg, @activeBg) !important;
+  }
+  // 一级菜单激活下划线
+  .cip-menu__underline(){
+    position: relative;
+    &::after{
+      content: ' ';
+      position: absolute;
+      bottom: -8px;
+      display: inline-block;
+      width: 12px;
+      height: 4px;
+      background: var(--cip-menu-active-underline-color, @activeColor);
+      left: 50%;
+      border-radius: 4px;
+      transform: translateX(-50%);
+    }
+  }
+  /**混入定义结束**/
+  .@{elNamespace}-menu{
+    background: @bg;
+    .@{elNamespace}-menu-item{
+      font-weight: bold;
+      color: @defaultColor;
+      border-bottom: none;
+      &:hover{
+        .menu-item-hover()
+      }
+      &:focus{
+        .menu-item-focus()
+      }
+      &.is-active{
+        .menu-item-active();
+        .cip-menu__title{
+          .cip-menu__underline();
+        }
+      }
+
+    }
+    .@{elNamespace}-sub-menu{
+
+      .@{elNamespace}-sub-menu__title{
+        background: @bg;
+        font-weight: bold;
+        color: @defaultColor;
+        border-bottom: none;
+        &:hover{
+          //.menu-item-active()
+          .menu-item-hover()
+        }
+        &:focus{
+          .menu-item-focus()
+        }
+        &.is-active{
+          .menu-item-active()
+        }
+      }
+      &.is-active{ // 子菜单激活
+        .cip-menu__title{
+          .menu-item-active();
+          .cip-menu__underline();
+        }
+      }
+
+    }
+  }
+
+
+}

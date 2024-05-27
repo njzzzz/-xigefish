@@ -1,0 +1,23 @@
+@import '../../../theme/variate.less';
+
+.equipment-radio{
+  display: inline-flex;
+  &__option{
+    font-size: 14px;
+    padding: 4px 8px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    &--active{
+      background: @background;
+      color: @primary;
+    }
+    &+&{
+      margin-left: 4px;
+    }
+  }
+}
+

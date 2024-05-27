@@ -1,0 +1,12 @@
+.extension-number-range{
+  display: flex;
+  .@{elNamespace}-input-number{
+    flex: 1;
+    width: auto;
+    // other的item高度多了1px，导致前一个number右侧箭头按钮样式问题
+    height: 32px;
+  }
+  &__joint{
+    padding: 0 8px;
+  }
+}

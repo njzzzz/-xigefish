@@ -1,0 +1,26 @@
+.example-block{
+  background: var(--el-bg-color);
+  margin-top: 24px;
+  border-radius: 2px;
+  &__header{
+    margin: unset;
+    padding: 8px;
+    border-bottom: 1px solid @background;
+  }
+  &__content{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  &__control{
+    border-top: 1px solid @background;
+    padding: 8px;
+    text-align: right;
+  }
+  &__code{
+    .CodeMirror-code{
+      padding: 20px;
+    }
+  }
+
+}

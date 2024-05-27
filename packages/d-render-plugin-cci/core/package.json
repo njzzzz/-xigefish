@@ -1,0 +1,59 @@
+{
+  "name": "@xigefish/d-render-plugin-cci",
+  "version": "2.1.2",
+  "description": "cci用于d-render的插件",
+  "module": "./esm/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "esm",
+    "types",
+    "dist",
+    "src",
+    "CHANGELOG.md"
+  ],
+  "exports": {
+    ".": "./esm/main.js",
+    "./CHANGELOG.md": "./CHANGELOG.md",
+    "./*.js": {
+      "import": "./esm/*.js",
+      "types": "./types/*.d.ts"
+    },
+    "./dist/*": "./dist/*",
+    "./esm/*": "./esm/*",
+    "./*": {
+      "import": [
+        "./esm/*.js",
+        "./esm/*/index.js",
+        "./esm/*"
+      ],
+      "types": "./types/*.d.ts"
+    }
+  },
+  "keywords": [
+    "@xigefish/d-render",
+    "plugin",
+    "input",
+    "layout",
+    "cci"
+  ],
+  "dependencies": {
+    "@xigefish/components": "workspace: *",
+    "@xigefish/d-render-shared": "workspace: *",
+    "@xigefish/button": "workspace: *",
+    "@xigefish/d-render-shared": "workspace: *",
+    "@element-plus/icons-vue": "2.x",
+    "@xigefish/d-render": "workspace: *",
+    "dayjs": "1.x",
+    "element-plus": "2.2.22",
+    "uuid": ">= 8.0.0",
+    "vant": "^3.0.0",
+    "vue": "^3.2.47"
+  },
+  "author": "xmf",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

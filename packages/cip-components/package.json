@@ -1,0 +1,61 @@
+{
+  "name": "@xigefish/components",
+  "version": "6.0.66",
+  "description": "",
+  "scripts": {
+    "gen": "node ./gen.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "sideEffects": false,
+  "exports": {
+    ".": "./esm/index.js",
+    "./CHANGELOG.md": "./CHANGELOG.md",
+    "./*.js": {
+      "import": "./esm/*.js",
+      "types": "./types/*.d.ts"
+    },
+    "./esm/*": {
+      "import": [
+        "./esm/*.js",
+        "./esm/*/index.js",
+        "./esm/*"
+      ],
+      "types": "./types/*.d.ts"
+    },
+    "./*": {
+      "import": [
+        "./esm/*.js",
+        "./esm/*/index.js",
+        "./esm/*"
+      ],
+      "types": "./types/*.d.ts"
+    }
+  },
+  "dependencies": {
+    "@xigefish/shared": "workspace: *",
+    "@xigefish/page-layout-shared": "workspace: *",
+    "@xigefish/button": "workspace: *",
+    "@xigefish/config": "workspace: *",
+    "@xigefish/types": "workspace: *",
+    "@xigefish/hooks": "workspace: *",
+    "@xigefish/page-layout": "workspace: *",
+    "@xigefish/request": "workspace: *",
+    "@xigefish/styles": "workspace: *",
+    "@xigefish/d-render-shared": "workspace: *",
+    "@element-plus/icons-vue": "2.x",
+    "@vue/shared": "^3.2.26",
+    "countup.js": "2.x",
+    "@xigefish/d-render": "workspace: *",
+    "dayjs": "1.x",
+    "deepmerge": "^4.3.1",
+    "dompurify": "^3.0.6",
+    "element-plus": "2.2.22",
+    "mui-player": "1.x",
+    "vant": "3.x",
+    "vue": "3.x",
+    "vue-router": "4.x",
+    "wangeditor": "4.x"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "extends": "../../../tsconfig.packages.json",
+  "compilerOptions": {
+    "declarationDir": "./types",
+    "declaration": true,
+    "outDir": "./types",
+    "emitDeclarationOnly": true,
+    "jsx": "preserve",
+    "noEmit": false,
+    "moduleResolution": "Bundler",
+    "strictNullChecks": false
+  },
+  "include": [
+    "./src/**/*.js",
+    "./src/**/*.jsx",
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ]
+}

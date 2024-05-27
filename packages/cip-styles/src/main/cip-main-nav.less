@@ -1,0 +1,115 @@
+// 水平模式时高度强制设置为100%
+.@{elNamespace}-menu--horizontal.@{elNamespace}-menu.cip-main-nav{
+  height: 100%;
+
+}
+.cip-main-nav.@{elNamespace}-menu, .cip-menu-popper{
+  border:none;
+  .cip-menu__title{
+    flex-grow: 2;
+  }
+  // 展开后父菜单徽标消失
+  .@{elNamespace}-sub-menu.is-opened{
+    > .@{elNamespace}-sub-menu__title {
+      .cip-menu__badge {
+        visibility: hidden;
+      }
+    }
+  }
+  .@{elNamespace}-menu-item{ // 与el-sub-menu的表现不同在收缩时会套一个el-popper导致无法正常居中
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: normal;
+    .cip-menu__badge{
+      margin-left:8px;
+    }
+    [class~=iconfont], [class^=el-icon-], .cip-menu-icon, .cip-svg-icon, > svg, .@{elNamespace}-menu-tooltip__trigger > svg{
+      width: var(--cip-main-icon-size, 15px);
+      height: var(--cip-main-icon-size, 15px);
+      margin: var(--cip-main-aside-menu-svg-margin, 0 5px 0 0); // 此处与菜单的border有关
+      text-align: center;
+      font-size: var(~'--@{elNamespace}-menu-item-font-size');
+      vertical-align: middle;
+      overflow: visible;
+      & ~ .cip-menu__title {
+        margin-left: 10px;
+      }
+    }
+  }
+  .@{elNamespace}-sub-menu__title{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: normal;
+    .cip-menu__badge{
+      margin: 0 16px 0 8px;
+    }
+    [class~=iconfont], [class^=el-icon-], .cip-menu-icon, .cip-svg-icon, > svg{
+      width: var(--cip-main-icon-size, 15px);
+      height: var(--cip-main-icon-size, 15px);
+      margin: var(--cip-main-aside-menu-svg-margin, 0 5px 0 0);
+      text-align: center;
+      font-size: var(--cip-main-icon-size, var(~'--@{elNamespace}-menu-item-font-size'));
+      vertical-align: middle;
+      overflow: visible;
+      & ~ .cip-menu__title {
+        margin-left: 10px;
+      }
+    }
+  }
+  .@{elNamespace}-sub-menu{
+    [class~=iconfont], [class^=el-icon-], .cip-menu-icon, .cip-svg-icon{
+      text-align: center;
+      font-size: var(--cip-main-icon-size, var(~'--@{elNamespace}-menu-item-font-size'));
+      //vertical-align: middle;
+    }
+  }
+}
+
+.cip-menu-popper{
+  .@{elNamespace}-menu-item,.@{elNamespace}-sub-menu__title{
+    .cip-menu__badge{
+      flex-shrink: 0;
+      margin: 0 8px 0 8px;
+    }
+  }
+}
+
+.cip-main-nav.@{elNamespace}-menu--collapse{
+  overflow-x: hidden;
+  .@{elNamespace}-menu-item{
+    //line-height: var(~'--@{elNamespace}-menu-item-height');
+    .@{elNamespace}-menu-tooltip__trigger{
+      display: flex;
+      justify-content: center;
+
+    }
+  }
+  .@{elNamespace}-sub-menu__title{
+    display: flex;
+    justify-content: center;
+  }
+  .cip-menu__badge{
+    display: none !important;
+  }
+  .cip-menu__title{
+    display: none !important;
+  }
+}
+
+// 此部分内容输入主题
+.cip-menu-popper.cip-menu-popper--horizontal {
+  border-color: transparent;
+  .cip-menu__title {
+    color: @text_color_regular; //var(~'--@{elNamespace}-text-color-regular');
+  }
+  .@{elNamespace}-menu-item:hover {
+    color: @text_color_primary; //var(~'--@{elNamespace}-text-color-primary');
+    background-color: @fill_color_light; //var(~'--@{elNamespace}-fill-color-light');
+  }
+}
+
+.cip-menu-popper.cip-menu-popper--vertical{
+  min-width: 200px;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@xigefish/store",
+  "version": "1.0.0",
+  "description": "响应式数据仓库",
+  "repository": {
+    "type": "git",
+    "url": "https://git.citycloud.com.cn:3000/cip/cip-plus.git",
+    "directory": "packages/cip-store"
+  },
+  "main": "./esm/main.js",
+  "types": "./types/main.d.ts",
+  "keywords": [
+    "vue",
+    "store",
+    "reactive"
+  ],
+  "files": [
+    "src",
+    "esm",
+    "types"
+  ],
+  "author": "xmf",
+  "license": "MIT",
+  "dependencies": {
+    "vue": ">= 3.2.0"
+  }
+}

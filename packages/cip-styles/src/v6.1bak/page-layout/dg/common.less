@@ -1,0 +1,58 @@
+.cip-page-layout--dg{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  &.in-page-layout{
+    // 其他页面下的处理
+    --side-padding: 0;
+    --side-margin: 0;
+    .cip-page-layout__main{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .cip-page-layout__header{
+    flex-shrink: 0;
+  }
+  .cip-page-layout__breadcrumb{
+    margin: var(--side-margin);
+    padding: 0 var(--side-padding);
+    background: var(--content-bg);
+    height: 40px;
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    .cip-main-breadcrumb{
+      padding: 0;
+    }
+  }
+  .cip-page-layout__title{
+    margin: var(--side-margin);
+    padding: var(--gap) var(--side-padding) 0;
+    background: var(--content-bg);
+  }
+
+ .cip-page-layout__main{
+    flex-grow: 2;
+    padding: 0 var(--side-padding) 0;
+    margin: var(--side-margin);
+    //overflow: auto;
+    //height: 0;
+    box-sizing: border-box;
+    background: var(--content-bg);
+ }
+  .cip-page-layout__footer{
+    flex-shrink: 0;
+    width: 100%;
+    height: 64px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 var(--side-padding);
+    box-sizing: border-box;
+    box-shadow: 0px -2px 12px 0px rgba(0,0,0,0.06);
+  }
+}
+
+

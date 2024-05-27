@@ -1,0 +1,63 @@
+@import '../theme/variate.less';
+
+.cip-number {
+  &&--left {
+    .@{elNamespace}-input__inner {
+      text-align: left;
+    }
+  }
+  &&--unit {
+    position: relative;
+    .@{elNamespace}-input__inner {
+    }
+    &::after {
+      content: attr(data-unit);
+      position: absolute;
+      right: 4px;
+      top: 1px;
+      //height: @formItemLineHeight;
+      color: @info;
+    }
+  }
+  &--standard {
+    &.@{elNamespace}-input-number--small {
+      .@{elNamespace}-input-number__decrease {
+        // small 状态下right 32px异常需要覆盖
+        right: 24px;
+      }
+    }
+    .@{elNamespace}-input-number__decrease {
+      left: auto;
+      right: 32px;
+      // 按钮30px+右边框1px+左边竖线1px
+      background: inherit;
+      border: none;
+    }
+    .@{elNamespace}-input-number__increase {
+      background: inherit;
+      border: none;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        bottom: 8px;
+        width: 1px;
+        background: @border_color; //var(~'--@{elNamespace}-border-color');
+      }
+    }
+  }
+}
+
+.@{elNamespace}-input-number {
+  &.cip-number {
+    &--standard {
+      &.@{elNamespace}-input-number--large {
+        .@{elNamespace}-input-number__decrease {
+          right: 40px;
+          // 按钮38px+右边框1px+左边竖线1px
+        }
+      }
+    }
+  }
+}

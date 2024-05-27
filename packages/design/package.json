@@ -1,0 +1,54 @@
+{
+  "name": "@xigefish/d-render-design",
+  "version": "1.1.6",
+  "description": "d-render中cip-form-render、cip-table-render渲染器schema的设计器",
+  "sideEffects": [
+    "dist/*"
+  ],
+  "main": "./esm/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports":{
+    ".": {
+      "import": "./esm/main.js"
+    },
+    "./*": {
+      "import": [
+        "./esm/*.js",
+        "./esm/*/index.js",
+        "./esm/*"
+      ]
+    },
+    "./esm/*": {
+      "import": [
+        "./esm/*.js",
+        "./esm/*/index.js",
+        "./esm/*"
+      ]
+    },
+    "./dist/*": {
+      "import": "./dist/*"
+    }
+  },
+  "files": [
+    "esm",
+    "dist",
+    "src",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {
+    "@xigefish/code-mirror": "workspace:*",
+    "@xigefish/d-render-shared": "workspace:*",
+    "@element-plus/icons-vue": "^2.1.0",
+    "@xigefish/button": "workspace:*",
+    "@xigefish/d-render": "workspace:*",
+    "element-plus": "2.2.22",
+    "uuid": "^8.3.x",
+    "vue": "^3.3.2",
+    "vuedraggable": "^4.1.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

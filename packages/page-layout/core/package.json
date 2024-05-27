@@ -1,0 +1,47 @@
+{
+  "name": "@xigefish/page-layout",
+  "version": "1.0.5",
+  "description": "页面内容布局",
+  "main": "./esm/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "exports": {
+    ".": {
+      "import": "./esm/main.js"
+    },
+    "./list": {
+      "import": "./esm/layout/list.js"
+    },
+    "./info": {
+      "import": "./esm/layout/info.js"
+    },
+    "./handle": {
+      "import": "./esm/layout/handle.js"
+    },
+    "./left-right": {
+      "import": "./esm/layout/left-right.js"
+    },
+    "./empty": {
+      "import": "./esm/layout/empty.js"
+    },
+    "./*": {
+      "import": "./*"
+    }
+  },
+  "dependencies": {
+    "@xigefish/d-render-shared": "workspace:*",
+    "vue": ">=3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": " https://git.citycloud.com.cn:3000/cip/cip-plus.git"
+  },
+  "keywords": [
+    "page",
+    "layout",
+    "vue3"
+  ],
+  "author": "xmf",
+  "license": "ISC"
+}
